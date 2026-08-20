@@ -32,7 +32,7 @@ Eso te crea la carpeta del proyecto. Esa carpeta es la que abrís desde Unity Hu
 Antes de empezar a laburar, traé lo último que subieron los demás:
 
 ```bash
-git checkout master
+git checkout main
 git pull
 ```
 
@@ -52,9 +52,9 @@ git push -u origin movimiento-jugador
 
 `add .` marca todo lo que cambiaste, `commit` saca la foto con un mensaje que explique qué hiciste, y `push` la sube a GitHub. La primera vez que subís una rama va con `-u origin nombre-de-la-rama`; después alcanza con `git push` a secas.
 
-### Meter tu trabajo en master
+### Meter tu trabajo en main
 
-Entrá al repo en GitHub y te va a aparecer un cartel para crear un **Pull Request** desde tu rama. Ponele un título, crealo y avisá al grupo. Alguien lo mira, y si está todo bien se mergea a `master`. Ahí ya podés volver a `master`, hacer `pull` y arrancar una rama nueva para lo que sigue.
+Entrá al repo en GitHub y te va a aparecer un cartel para crear un **Pull Request** desde tu rama. Ponele un título, crealo y avisá al grupo. Alguien lo mira, y si está todo bien se mergea a `main`. Ahí ya podés volver a `main`, hacer `pull` y arrancar una rama nueva para lo que sigue.
 
 ### Los comandos que vas a usar siempre
 
