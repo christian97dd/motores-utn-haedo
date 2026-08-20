@@ -2,6 +2,8 @@
 
 Proyecto grupal de la materia. Unity **6000.3.5f2**: abrilo siempre con esa versión, si lo abrís con otra Unity reescribe medio proyecto y se llena de conflictos.
 
+Las tareas las repartimos en [este tablero de Trello](https://trello.com/b/Nkd6nKZ9/motores-de-desarrollo): antes de arrancar algo, fijate ahí qué hay libre y tomalo, así no terminamos dos haciendo lo mismo.
+
 ---
 
 ## Git en cinco minutos
