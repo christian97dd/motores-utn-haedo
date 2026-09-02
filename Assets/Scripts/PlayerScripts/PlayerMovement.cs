@@ -1,59 +1,56 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
-    [SerializeField] private float speedWalk = 5f;
-    [SerializeField] private float speedRun = 15f;
-    private Vector3 ultimaPosicion;
-    private float velocidadActual;
+    public InputActionAsset inputActions;
+    public CharacterController playerCharacterController;
 
-    void Start()
+    private InputAction playerMoveAction;
+
+    [SerializeField] private Transform playerCamera;
+    private Vector2 playerMoveAmount;
+
+    private float playerWalkSpeed = 5f;
+    private float playerRotateDampening = 0.1f;
+    private float turnSmoothingVelocity;
+
+
+
+    private void OnEnable()
     {
-        ultimaPosicion = transform.position;
+        inputActions.FindActionMap("Player").Enable();
     }
 
-    void Update()
+    private void OnDisable()
     {
-        MovePlayer();
+        inputActions.FindActionMap("Player").Disable();
     }
 
-    void MovePlayer()
+    private void Awake()
     {
-        if (Keyboard.current.wKey.isPressed)
+        playerMoveAction = InputSystem.actions.FindAction("Move");
+    }
+    private void Update()
+    {
+        playerMoveAmount = playerMoveAction.ReadValue<Vector2>();
+        PlayerMoveAndRotate();
+    }
+
+    private void PlayerMoveAndRotate()
+    {
+        Vector3 playerDirection = new Vector3(playerMoveAmount.x, 0f, playerMoveAmount.y).normalized;
+
+        if (playerDirection.magnitude >= 0.1f)
         {
-            transform.Translate(new Vector3(0, 0, 1) * speedWalk * Time.deltaTime);
+            float targetAngle = Mathf.Atan2(playerDirection.x, playerDirection.z) * Mathf.Rad2Deg + playerCamera.eulerAngles.y;
+            float smoothTargetAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothingVelocity, playerRotateDampening);
+
+            transform.rotation = Quaternion.Euler(0f, smoothTargetAngle, 0f);
+
+            Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            playerCharacterController.Move(moveDirection.normalized * playerWalkSpeed * Time.deltaTime);
         }
 
-        if (Keyboard.current.sKey.isPressed)
-        {
-            transform.Translate(new Vector3(0, 0, -1) * speedWalk * Time.deltaTime);
-        }
-
-        if (Keyboard.current.aKey.isPressed)
-        {
-            transform.Translate(new Vector3(-1, 0, 0) * speedWalk * Time.deltaTime);
-        }
-
-        if (Keyboard.current.dKey.isPressed)
-        {
-            transform.Translate(new Vector3(1, 0, 0) * speedWalk * Time.deltaTime);
-        }
-
-        if (Keyboard.current.leftShiftKey.isPressed)
-        {
-            speedWalk = speedRun;
-        }
-        else if (Keyboard.current.leftShiftKey.wasReleasedThisFrame)
-        {
-            speedWalk = 5f;
-        }
-
-        velocidadActual = (transform.position - ultimaPosicion).magnitude / Time.deltaTime;
-
-        ultimaPosicion = transform.position;
-
-        Debug.Log("Velocidad por Transform: " + velocidadActual + " m/s");
     }
 }
