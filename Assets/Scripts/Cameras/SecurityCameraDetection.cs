@@ -11,6 +11,9 @@ public class SecurityCameraDetection : MonoBehaviour
     [Header("Trigger detección")]
     public GameObject detectionTriggerZone;    // GameObject del Trigger de la cámara que detecta al Player
 
+    [Min(0f)]
+    [SerializeField] private float detectionRadius = 5f;   // Radio del área de detección, en unidades de mundo
+
     [Header("Audiosource de estados de alarma")]
     public AudioSource detectionAudioSource;   // Sonido mientras detecta al jugador 
 
@@ -25,6 +28,7 @@ public class SecurityCameraDetection : MonoBehaviour
     private Coroutine alarmCoroutine;
     private Coroutine fadeAudioCoroutine;
     private float originalDetectionVolume = 1f;
+    private CapsuleCollider detectionCollider;
 
     private void Awake()
     {
@@ -32,6 +36,32 @@ public class SecurityCameraDetection : MonoBehaviour
         {
             originalDetectionVolume = detectionAudioSource.volume;
         }
+
+        ApplyDetectionRadius();
+    }
+
+    // Se llama al cambiar un valor en el Inspector, sin necesidad de entrar en Play
+    private void OnValidate()
+    {
+        ApplyDetectionRadius();
+    }
+
+    private void ApplyDetectionRadius()
+    {
+        if (detectionCollider == null)
+        {
+            detectionCollider = GetComponent<CapsuleCollider>();
+        }
+
+        if (detectionCollider == null) return;
+
+        // El collider hereda la escala de los padres, así que el radio se divide
+        // por esa escala para que el valor del Inspector quede en unidades de mundo
+        float escalaHeredada = transform.lossyScale.x;
+
+        if (escalaHeredada <= 0f) return;
+
+        detectionCollider.radius = detectionRadius / escalaHeredada;
     }
 
     private void Update()
