@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4713349133655568684}
   - component: {fileID: 5217742424305494717}
   - component: {fileID: 1920608517869746988}
-  - component: {fileID: 7888030698889643569}
   m_Layer: 0
   m_Name: Prefab_safeZone_Door
   m_TagString: Untagged
@@ -333,26 +332,4 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5235803314932783897}
-  m_Mesh: {fileID: 0}
---- !u!64 &7888030698889643569
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5235803314932783897}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 0}

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8056616178154079044}
   - component: {fileID: 5842689549021836996}
   - component: {fileID: 5138457355530390579}
-  - component: {fileID: 267692430795586876}
   m_Layer: 0
   m_Name: Prefab_desk_L
   m_TagString: Untagged
@@ -573,26 +572,4 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9036044775609892453}
-  m_Mesh: {fileID: 0}
---- !u!64 &267692430795586876
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9036044775609892453}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 0}

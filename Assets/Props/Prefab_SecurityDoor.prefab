@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3497349954187534115}
   - component: {fileID: 3538844061609914569}
   - component: {fileID: 6888627697334199347}
-  - component: {fileID: 8913835259137900151}
   m_Layer: 0
   m_Name: Prefab_SecurityDoor
   m_TagString: Untagged
@@ -333,26 +332,4 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4694087376267585359}
-  m_Mesh: {fileID: 0}
---- !u!64 &8913835259137900151
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4694087376267585359}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 0}
