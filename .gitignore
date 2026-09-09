@@ -26,6 +26,10 @@
 # Recordings can get excessive in size
 /[Rr]ecordings/
 
+# Copia de emergencia que genera Unity cuando el editor se cierra mal
+/[Aa]ssets/_[Rr]ecovery/
+/[Aa]ssets/_[Rr]ecovery.meta
+
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
 
