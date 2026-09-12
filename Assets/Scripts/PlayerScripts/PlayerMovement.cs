@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(CharacterController))]
 public class Player : MonoBehaviour
 {
     public InputActionAsset inputActions;
@@ -19,6 +20,15 @@ public class Player : MonoBehaviour
     private float playerRunSpeed = 8f;
     private float playerRotateDampening = 0.1f;
     private float turnSmoothingVelocity;
+
+    [SerializeField] private float playerGravity = -9.8f;
+    private float _verticalVelocity;
+    private float groundedVerticalVelocity = -2f;
+
+    [Header("Detección de suelo")]
+    [SerializeField] private Transform groundCheckPivot;
+    [SerializeField] private float groundCheckRadius = 0.3f;
+    [SerializeField] private LayerMask groundLayer;
 
     private void OnEnable()
     {
@@ -50,6 +60,8 @@ public class Player : MonoBehaviour
         bool isRunning = playerSprintAction != null && playerSprintAction.IsPressed();
         bool isCrouching = playerCrouchAction != null && playerCrouchAction.IsPressed();
 
+        Vector3 horizontalMove = Vector3.zero;
+
         if (playerDirection.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(playerDirection.x, playerDirection.z) * Mathf.Rad2Deg + playerCamera.eulerAngles.y;
@@ -60,11 +72,43 @@ public class Player : MonoBehaviour
             float currentSpeed = isRunning ? playerRunSpeed : playerWalkSpeed;
 
             Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            playerCharacterController.Move(moveDirection.normalized * currentSpeed * Time.deltaTime);
+            horizontalMove = moveDirection.normalized * currentSpeed;
         }
 
-        // Fuera del if, si no al soltar el joystick el Animator se queda en la animación de caminar
+        ApplyGravity();
+
+        Vector3 finalMove = horizontalMove + Vector3.up * _verticalVelocity;
+        playerCharacterController.Move(finalMove * Time.deltaTime);
+
         UpdatePlayerAnimator(playerDirection.magnitude, isRunning, isCrouching);
+    }
+
+    private void ApplyGravity()
+    {
+        if (IsGrounded() && _verticalVelocity < 0f)
+        {
+            _verticalVelocity = groundedVerticalVelocity;
+        }
+        else
+        {
+            _verticalVelocity += playerGravity * Time.deltaTime;
+        }
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics.CheckSphere(GetGroundCheckOrigin(), groundCheckRadius, groundLayer, QueryTriggerInteraction.Ignore);
+    }
+
+    private Vector3 GetGroundCheckOrigin()
+    {
+        return groundCheckPivot != null ? groundCheckPivot.position : transform.position;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = IsGrounded() ? Color.green : Color.red;
+        Gizmos.DrawWireSphere(GetGroundCheckOrigin(), groundCheckRadius);
     }
 
     private void UpdatePlayerAnimator(float movement, bool isRunning, bool isCrouching)
