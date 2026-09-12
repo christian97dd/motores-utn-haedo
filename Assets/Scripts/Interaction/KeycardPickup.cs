@@ -15,6 +15,12 @@ public class KeycardPickup : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        if (KeycardManager.Instance == null)
+        {
+            Debug.LogError("No hay un KeycardManager en la escena, la tarjeta no se puede registrar", this);
+            return;
+        }
+
         KeycardManager.Instance.CollectKeycard(keycardId);
 
         // A propósito NO llamamos HintTextController acá para mostrar

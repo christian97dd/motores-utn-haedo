@@ -23,6 +23,14 @@ public class InteractableDoor : MonoBehaviour, IInteractable
     [SerializeField] private string lockedPrompt = "Puerta bloqueada - necesitás la tarjeta";
     [SerializeField] private string unlockedPrompt = "Mantené E para abrir";
 
+    // Quién sabe mover la puerta; este script solo decide si se puede abrir
+    private Door doorMovement;
+
+    private void Awake()
+    {
+        doorMovement = GetComponent<Door>();
+    }
+
     private void Start()
     {
         UpdateStatusLight();
@@ -53,6 +61,7 @@ public class InteractableDoor : MonoBehaviour, IInteractable
         if (isLocked)
         {
             bool hasRequiredKeycard = !string.IsNullOrEmpty(requiredKeycardId)
+                && KeycardManager.Instance != null
                 && KeycardManager.Instance.HasKeycard(requiredKeycardId);
 
             if (hasRequiredKeycard)
@@ -68,7 +77,11 @@ public class InteractableDoor : MonoBehaviour, IInteractable
         }
 
         Debug.Log("Acceso concedido");
-        // TODO: acá después va lo que pase al abrirse de verdad — animación, cambio de escena, lo que definan
+
+        if (doorMovement != null)
+        {
+            doorMovement.Toggle();
+        }
     }
 
     // Público a propósito: cualquier otro sistema (tarjeta, interruptor,

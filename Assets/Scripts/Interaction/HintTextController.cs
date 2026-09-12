@@ -28,6 +28,12 @@ public class HintTextController : MonoBehaviour
         }
         Instance = this;
 
+        if (hintText == null || canvasGroup == null)
+        {
+            Debug.LogError("Faltan asignar el TMP_Text o el CanvasGroup del hint", this);
+            return;
+        }
+
         // Arranca invisible y sin texto — cada interactuable decide cuándo
         // mostrar algo, este script no asume ningún estado inicial propio.
         canvasGroup.alpha = 0f;
@@ -36,12 +42,16 @@ public class HintTextController : MonoBehaviour
 
     public void ShowHint(string message)
     {
+        if (hintText == null || canvasGroup == null) return;
+
         hintText.text = message;
         StartFade(1f);
     }
 
     public void HideHint()
     {
+        if (canvasGroup == null) return;
+
         StartFade(0f);
     }
 

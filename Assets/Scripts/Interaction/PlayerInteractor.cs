@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 /// <summary>
 /// Se coloca en el GameObject del jugador. Detecta el IInteractable más
@@ -12,8 +13,7 @@ public class PlayerInteractor : MonoBehaviour
     [SerializeField] private LayerMask interactableLayer;
     [SerializeField] private Transform detectionOrigin;
 
-    [Header("Input")]
-    [SerializeField] private KeyCode interactKey = KeyCode.E;
+    private InputAction interactAction;
 
     private IInteractable currentInteractable;
 
@@ -22,11 +22,26 @@ public class PlayerInteractor : MonoBehaviour
     // a diferencia de Physics.OverlapSphere normal.
     private readonly Collider[] detectionBuffer = new Collider[10];
 
+    private void Awake()
+    {
+        interactAction = InputSystem.actions.FindAction("Interact");
+    }
+
+    private void OnEnable()
+    {
+        interactAction?.Enable();
+    }
+
+    private void OnDisable()
+    {
+        interactAction?.Disable();
+    }
+
     private void Update()
     {
         DetectInteractable();
 
-        if (currentInteractable != null && Input.GetKeyDown(interactKey))
+        if (currentInteractable != null && interactAction != null && interactAction.WasPressedThisFrame())
         {
             if (currentInteractable.CanInteract())
             {
@@ -41,7 +56,7 @@ public class PlayerInteractor : MonoBehaviour
 
                 if (currentInteractable != null)
                 {
-                    HintTextController.Instance.ShowHint(currentInteractable.GetInteractionPrompt());
+                    ShowHint(currentInteractable.GetInteractionPrompt());
                 }
             }
         }
@@ -81,10 +96,24 @@ public class PlayerInteractor : MonoBehaviour
             currentInteractable = closest;
 
             if (currentInteractable != null)
-                HintTextController.Instance.ShowHint(currentInteractable.GetInteractionPrompt());
+                ShowHint(currentInteractable.GetInteractionPrompt());
             else
-                HintTextController.Instance.HideHint();
+                HideHint();
         }
+    }
+
+    // El hint es opcional: si la escena todavía no tiene el Canvas armado,
+    // la interacción sigue funcionando en vez de tirar NullReference
+    private void ShowHint(string message)
+    {
+        if (HintTextController.Instance != null)
+            HintTextController.Instance.ShowHint(message);
+    }
+
+    private void HideHint()
+    {
+        if (HintTextController.Instance != null)
+            HintTextController.Instance.HideHint();
     }
 
     // Dibuja el rango de detección como una esfera amarilla en la Scene view
