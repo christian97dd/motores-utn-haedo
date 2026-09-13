@@ -46,6 +46,9 @@ public class Player : MonoBehaviour
         playerSprintAction = InputSystem.actions.FindAction("Sprint");
         playerCrouchAction = InputSystem.actions.FindAction("Crouch");
         playerAnimator = GetComponentInChildren<Animator>();
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
     private void Update()
     {
