@@ -15,12 +15,12 @@ GameObject:
   - component: {fileID: 4555717425891897975}
   - component: {fileID: 7289360328127402362}
   - component: {fileID: 8309817331219625602}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8474150562233891741
 Transform:
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3530
+  m_VersionIndex: 3545
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -337,7 +337,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3111349939205093007
 Transform:
@@ -382,7 +382,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3723603939332246281
 Transform:
@@ -418,7 +418,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6789417190427915409
 Transform:
@@ -460,7 +460,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3080195114920033975
 Transform:
@@ -499,7 +499,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1967362605406649145
 Transform:
@@ -543,7 +543,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6136994487358779633
 Transform:
@@ -582,7 +582,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4669907055734718661
 Transform:
@@ -619,7 +619,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &108987591181228855
 Transform:
@@ -656,7 +656,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5252656273006607029
 Transform:
@@ -36078,7 +36078,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 37026
+  m_VersionIndex: 37041
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -36200,7 +36200,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8205422422853360631
 Transform:
@@ -36236,7 +36236,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5219328398975446473
 Transform:
@@ -36277,7 +36277,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6276036579556210745
 Transform:
@@ -36316,6 +36316,10 @@ PrefabInstance:
     - target: {fileID: 2269010006161459878, guid: ced761fe831c30a46a4c349b25b73ebc, type: 3}
       propertyPath: m_Name
       value: SZ_codePanel1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269010006161459878, guid: ced761fe831c30a46a4c349b25b73ebc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4054555175045708211, guid: ced761fe831c30a46a4c349b25b73ebc, type: 3}
       propertyPath: m_LocalScale.x
@@ -36367,7 +36371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6088269633900124778, guid: ced761fe831c30a46a4c349b25b73ebc, type: 3}
       propertyPath: m_VersionIndex
-      value: 1928
+      value: 1943
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8113321561628874737, guid: ced761fe831c30a46a4c349b25b73ebc, type: 3}
@@ -36425,6 +36429,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SZ_safeZone_Door1
       objectReference: {fileID: 0}
+    - target: {fileID: 5235803314932783897, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8575807055135665564, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.587
@@ -36467,7 +36475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9040701926699623268, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
       propertyPath: m_VersionIndex
-      value: 2401
+      value: 2416
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7888030698889643569, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
@@ -36525,9 +36533,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZF_tank1
       objectReference: {fileID: 0}
+    - target: {fileID: 1435290604385119360, guid: 85af00119e1abea4398428feb84de8d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2812860764206088507, guid: 85af00119e1abea4398428feb84de8d3, type: 3}
       propertyPath: m_VersionIndex
-      value: 1211
+      value: 1226
       objectReference: {fileID: 0}
     - target: {fileID: 9177041736839558104, guid: 85af00119e1abea4398428feb84de8d3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36661,9 +36673,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZG_chair1
       objectReference: {fileID: 0}
+    - target: {fileID: 5496095677671886991, guid: a1ea447169ae4fa4c97fd49f73350496, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7042183703274085716, guid: a1ea447169ae4fa4c97fd49f73350496, type: 3}
       propertyPath: m_VersionIndex
-      value: 2436
+      value: 2451
       objectReference: {fileID: 0}
     - target: {fileID: 8129342177815269904, guid: a1ea447169ae4fa4c97fd49f73350496, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -36721,13 +36737,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZB_generator4
       objectReference: {fileID: 0}
+    - target: {fileID: 1317814236131569558, guid: fe9ca2c885a91a540b47dcb105106617, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1721104308825571451, guid: fe9ca2c885a91a540b47dcb105106617, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5884df04201b2cb4294b4cf2da31a53a, type: 2}
     - target: {fileID: 1769411121542350098, guid: fe9ca2c885a91a540b47dcb105106617, type: 3}
       propertyPath: m_VersionIndex
-      value: 1217
+      value: 1232
       objectReference: {fileID: 0}
     - target: {fileID: 4299160611152178889, guid: fe9ca2c885a91a540b47dcb105106617, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36821,6 +36841,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZB_generator3
       objectReference: {fileID: 0}
+    - target: {fileID: 1374479419775396756, guid: 0cef4b8532dbbae4d894f7cb84415e51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3251099455138872146, guid: 0cef4b8532dbbae4d894f7cb84415e51, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.52
@@ -36863,7 +36887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3679558629945468521, guid: 0cef4b8532dbbae4d894f7cb84415e51, type: 3}
       propertyPath: m_VersionIndex
-      value: 1209
+      value: 1224
       objectReference: {fileID: 0}
     - target: {fileID: 6641187222094689621, guid: 0cef4b8532dbbae4d894f7cb84415e51, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -36925,6 +36949,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZB_codePanel
       objectReference: {fileID: 0}
+    - target: {fileID: 2269010006161459878, guid: ced761fe831c30a46a4c349b25b73ebc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4054555175045708211, guid: ced761fe831c30a46a4c349b25b73ebc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.12205564
@@ -36967,7 +36995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6088269633900124778, guid: ced761fe831c30a46a4c349b25b73ebc, type: 3}
       propertyPath: m_VersionIndex
-      value: 1928
+      value: 1943
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -37058,11 +37086,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6412135397312692173, guid: 26aced45a66f4444287a0f151f2d5fd0, type: 3}
       propertyPath: m_VersionIndex
-      value: 1925
+      value: 1940
       objectReference: {fileID: 0}
     - target: {fileID: 6970890429974168725, guid: 26aced45a66f4444287a0f151f2d5fd0, type: 3}
       propertyPath: m_Name
       value: ZA_machine2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6970890429974168725, guid: 26aced45a66f4444287a0f151f2d5fd0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7045570251727046322, guid: 26aced45a66f4444287a0f151f2d5fd0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -37124,9 +37156,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZE_tank8
       objectReference: {fileID: 0}
+    - target: {fileID: 1435290604385119360, guid: 85af00119e1abea4398428feb84de8d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2812860764206088507, guid: 85af00119e1abea4398428feb84de8d3, type: 3}
       propertyPath: m_VersionIndex
-      value: 1220
+      value: 1235
       objectReference: {fileID: 0}
     - target: {fileID: 9177041736839558104, guid: 85af00119e1abea4398428feb84de8d3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -37218,11 +37254,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 81733403041336726, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
       propertyPath: m_VersionIndex
-      value: 1925
+      value: 1940
       objectReference: {fileID: 0}
     - target: {fileID: 4558735309967460402, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
       propertyPath: m_Name
       value: ZA_desk1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558735309967460402, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4592965998152071852, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
       propertyPath: m_LocalScale.z
@@ -37328,6 +37368,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZB_safeZone_Door
       objectReference: {fileID: 0}
+    - target: {fileID: 5235803314932783897, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8575807055135665564, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.843449
@@ -37370,7 +37414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9040701926699623268, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
       propertyPath: m_VersionIndex
-      value: 2401
+      value: 2416
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -37427,6 +37471,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZC_safeZone_Door1
       objectReference: {fileID: 0}
+    - target: {fileID: 5235803314932783897, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8575807055135665564, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.21
@@ -37469,7 +37517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9040701926699623268, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
       propertyPath: m_VersionIndex
-      value: 2407
+      value: 2422
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7888030698889643569, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
@@ -37523,9 +37571,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZE_tank6
       objectReference: {fileID: 0}
+    - target: {fileID: 95329449133544097, guid: cd9dff42a601796409b992141e1a4947, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1799494387273152312, guid: cd9dff42a601796409b992141e1a4947, type: 3}
       propertyPath: m_VersionIndex
-      value: 1220
+      value: 1235
       objectReference: {fileID: 0}
     - target: {fileID: 2236264425416989954, guid: cd9dff42a601796409b992141e1a4947, type: 3}
       propertyPath: m_LocalPosition.x
@@ -37621,7 +37673,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3634716274809770740, guid: fd4bac6be9aa5544b8aca2e778dd4683, type: 3}
       propertyPath: m_VersionIndex
-      value: 3137
+      value: 3152
       objectReference: {fileID: 0}
     - target: {fileID: 4349349319613190884, guid: fd4bac6be9aa5544b8aca2e778dd4683, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -37670,6 +37722,10 @@ PrefabInstance:
     - target: {fileID: 7789613443842052554, guid: fd4bac6be9aa5544b8aca2e778dd4683, type: 3}
       propertyPath: m_Name
       value: ZC_computer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789613443842052554, guid: fd4bac6be9aa5544b8aca2e778dd4683, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -37762,13 +37818,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZE_tank7
       objectReference: {fileID: 0}
+    - target: {fileID: 4877759532577910272, guid: bc5f8cd5b9077d44c91819fef22cf25e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7930156608164010195, guid: bc5f8cd5b9077d44c91819fef22cf25e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5884df04201b2cb4294b4cf2da31a53a, type: 2}
     - target: {fileID: 8876708784513020435, guid: bc5f8cd5b9077d44c91819fef22cf25e, type: 3}
       propertyPath: m_VersionIndex
-      value: 1211
+      value: 1226
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8085100947062493484, guid: bc5f8cd5b9077d44c91819fef22cf25e, type: 3}
@@ -37860,11 +37920,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3364478229537220752, guid: c1aa138c56f543f4b93ad422c44320d9, type: 3}
       propertyPath: m_VersionIndex
-      value: 3962
+      value: 3977
       objectReference: {fileID: 0}
     - target: {fileID: 3589718467523680795, guid: c1aa138c56f543f4b93ad422c44320d9, type: 3}
       propertyPath: m_Name
       value: EZ_exitDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3589718467523680795, guid: c1aa138c56f543f4b93ad422c44320d9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7734484339529502741, guid: c1aa138c56f543f4b93ad422c44320d9, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -37896,7 +37960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
   openOffset: {x: 0, y: 3, z: 0}
-  openDuration: 1
+  openSpeed: 3
   isOpen: 0
 --- !u!4 &3512291545547883942 stripped
 Transform:
@@ -37913,11 +37977,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 81733403041336726, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
       propertyPath: m_VersionIndex
-      value: 1934
+      value: 1949
       objectReference: {fileID: 0}
     - target: {fileID: 4558735309967460402, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
       propertyPath: m_Name
       value: ZG_desk1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558735309967460402, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4592965998152071852, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -38013,7 +38081,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3634716274809770740, guid: fd4bac6be9aa5544b8aca2e778dd4683, type: 3}
       propertyPath: m_VersionIndex
-      value: 3137
+      value: 3152
       objectReference: {fileID: 0}
     - target: {fileID: 4349349319613190884, guid: fd4bac6be9aa5544b8aca2e778dd4683, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -38071,6 +38139,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZD_computer2
       objectReference: {fileID: 0}
+    - target: {fileID: 7789613443842052554, guid: fd4bac6be9aa5544b8aca2e778dd4683, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -38126,6 +38198,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SZ_codePanel
       objectReference: {fileID: 0}
+    - target: {fileID: 2269010006161459878, guid: ced761fe831c30a46a4c349b25b73ebc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4054555175045708211, guid: ced761fe831c30a46a4c349b25b73ebc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -31.87
@@ -38168,7 +38244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6088269633900124778, guid: ced761fe831c30a46a4c349b25b73ebc, type: 3}
       propertyPath: m_VersionIndex
-      value: 1928
+      value: 1943
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -38219,7 +38295,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1183776232744724796, guid: a2909a8093d49ab40ae18c583404f7d2, type: 3}
       propertyPath: m_VersionIndex
-      value: 1928
+      value: 1943
       objectReference: {fileID: 0}
     - target: {fileID: 5699818276826197182, guid: a2909a8093d49ab40ae18c583404f7d2, type: 3}
       propertyPath: m_LocalScale.x
@@ -38277,6 +38353,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZD_largeTable
       objectReference: {fileID: 0}
+    - target: {fileID: 6600640497555249717, guid: a2909a8093d49ab40ae18c583404f7d2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4853055072648866478, guid: a2909a8093d49ab40ae18c583404f7d2, type: 3}
     m_RemovedGameObjects: []
@@ -38331,11 +38411,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5884df04201b2cb4294b4cf2da31a53a, type: 2}
     - target: {fileID: 3234891651770947677, guid: c2928d26ae4828546bd7ef79b7d5a016, type: 3}
       propertyPath: m_VersionIndex
-      value: 2286
+      value: 2301
       objectReference: {fileID: 0}
     - target: {fileID: 3577425518750642336, guid: c2928d26ae4828546bd7ef79b7d5a016, type: 3}
       propertyPath: m_Name
       value: ZB_machine1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577425518750642336, guid: c2928d26ae4828546bd7ef79b7d5a016, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6095166441533769612, guid: c2928d26ae4828546bd7ef79b7d5a016, type: 3}
       propertyPath: m_Convex
@@ -38461,6 +38545,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZD_safeZone_Door
       objectReference: {fileID: 0}
+    - target: {fileID: 5235803314932783897, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8575807055135665564, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.72192234
@@ -38507,7 +38595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9040701926699623268, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
       propertyPath: m_VersionIndex
-      value: 2401
+      value: 2416
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7888030698889643569, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
@@ -38561,13 +38649,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZD_machine2
       objectReference: {fileID: 0}
+    - target: {fileID: 491505079373871352, guid: c2c6ab97e1f7b994d8ddbac6c99e307d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1166679971034398379, guid: c2c6ab97e1f7b994d8ddbac6c99e307d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5884df04201b2cb4294b4cf2da31a53a, type: 2}
     - target: {fileID: 2529235366528674889, guid: c2c6ab97e1f7b994d8ddbac6c99e307d, type: 3}
       propertyPath: m_VersionIndex
-      value: 1925
+      value: 1940
       objectReference: {fileID: 0}
     - target: {fileID: 5317801182754123226, guid: c2c6ab97e1f7b994d8ddbac6c99e307d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -38701,9 +38793,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZG_chair2
       objectReference: {fileID: 0}
+    - target: {fileID: 5496095677671886991, guid: a1ea447169ae4fa4c97fd49f73350496, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7042183703274085716, guid: a1ea447169ae4fa4c97fd49f73350496, type: 3}
       propertyPath: m_VersionIndex
-      value: 2430
+      value: 2445
       objectReference: {fileID: 0}
     - target: {fileID: 8129342177815269904, guid: a1ea447169ae4fa4c97fd49f73350496, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -38759,11 +38855,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 81733403041336726, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
       propertyPath: m_VersionIndex
-      value: 1925
+      value: 1940
       objectReference: {fileID: 0}
     - target: {fileID: 4558735309967460402, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
       propertyPath: m_Name
       value: EZ_desk
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558735309967460402, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4592965998152071852, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -38871,9 +38971,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZA_chair1
       objectReference: {fileID: 0}
+    - target: {fileID: 5496095677671886991, guid: a1ea447169ae4fa4c97fd49f73350496, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7042183703274085716, guid: a1ea447169ae4fa4c97fd49f73350496, type: 3}
       propertyPath: m_VersionIndex
-      value: 2430
+      value: 2445
       objectReference: {fileID: 0}
     - target: {fileID: 8129342177815269904, guid: a1ea447169ae4fa4c97fd49f73350496, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -38933,11 +39037,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 338ba4b87b93c6949a0de4b7f449a771, type: 2}
     - target: {fileID: 3683110191441803591, guid: c26f23deaab1dbb4abef86f6c3545ac6, type: 3}
       propertyPath: m_VersionIndex
-      value: 3388
+      value: 3403
       objectReference: {fileID: 0}
     - target: {fileID: 4694087376267585359, guid: c26f23deaab1dbb4abef86f6c3545ac6, type: 3}
       propertyPath: m_Name
       value: ZE_securityDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694087376267585359, guid: c26f23deaab1dbb4abef86f6c3545ac6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6840240463398681662, guid: c26f23deaab1dbb4abef86f6c3545ac6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39030,7 +39138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
   openOffset: {x: 0, y: 3, z: 0}
-  openDuration: 1
+  openSpeed: 3
   isOpen: 0
 --- !u!4 &8446755054256447055 stripped
 Transform:
@@ -39048,6 +39156,10 @@ PrefabInstance:
     - target: {fileID: 1374479419775396756, guid: 0cef4b8532dbbae4d894f7cb84415e51, type: 3}
       propertyPath: m_Name
       value: ZB_generator2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1374479419775396756, guid: 0cef4b8532dbbae4d894f7cb84415e51, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3251099455138872146, guid: 0cef4b8532dbbae4d894f7cb84415e51, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39091,7 +39203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3679558629945468521, guid: 0cef4b8532dbbae4d894f7cb84415e51, type: 3}
       propertyPath: m_VersionIndex
-      value: 1209
+      value: 1224
       objectReference: {fileID: 0}
     - target: {fileID: 6641187222094689621, guid: 0cef4b8532dbbae4d894f7cb84415e51, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -39153,9 +39265,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZE_tank4
       objectReference: {fileID: 0}
+    - target: {fileID: 1435290604385119360, guid: 85af00119e1abea4398428feb84de8d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2812860764206088507, guid: 85af00119e1abea4398428feb84de8d3, type: 3}
       propertyPath: m_VersionIndex
-      value: 1211
+      value: 1226
       objectReference: {fileID: 0}
     - target: {fileID: 9177041736839558104, guid: 85af00119e1abea4398428feb84de8d3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39289,9 +39405,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZA_chair2
       objectReference: {fileID: 0}
+    - target: {fileID: 5496095677671886991, guid: a1ea447169ae4fa4c97fd49f73350496, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7042183703274085716, guid: a1ea447169ae4fa4c97fd49f73350496, type: 3}
       propertyPath: m_VersionIndex
-      value: 2430
+      value: 2445
       objectReference: {fileID: 0}
     - target: {fileID: 8129342177815269904, guid: a1ea447169ae4fa4c97fd49f73350496, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -39389,9 +39509,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZC_chair2
       objectReference: {fileID: 0}
+    - target: {fileID: 5496095677671886991, guid: a1ea447169ae4fa4c97fd49f73350496, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7042183703274085716, guid: a1ea447169ae4fa4c97fd49f73350496, type: 3}
       propertyPath: m_VersionIndex
-      value: 2430
+      value: 2445
       objectReference: {fileID: 0}
     - target: {fileID: 8129342177815269904, guid: a1ea447169ae4fa4c97fd49f73350496, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -39451,7 +39575,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5884df04201b2cb4294b4cf2da31a53a, type: 2}
     - target: {fileID: 3719747599474217116, guid: 4fe6c3e4e26f5764ba8de7e19ba79ac9, type: 3}
       propertyPath: m_VersionIndex
-      value: 1931
+      value: 1946
       objectReference: {fileID: 0}
     - target: {fileID: 4328452563891120369, guid: 4fe6c3e4e26f5764ba8de7e19ba79ac9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39496,6 +39620,10 @@ PrefabInstance:
     - target: {fileID: 8275095118740260249, guid: 4fe6c3e4e26f5764ba8de7e19ba79ac9, type: 3}
       propertyPath: m_Name
       value: ZC_largeTable1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275095118740260249, guid: 4fe6c3e4e26f5764ba8de7e19ba79ac9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4936823375052018130, guid: 4fe6c3e4e26f5764ba8de7e19ba79ac9, type: 3}
@@ -39547,11 +39675,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 81733403041336726, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
       propertyPath: m_VersionIndex
-      value: 1925
+      value: 1940
       objectReference: {fileID: 0}
     - target: {fileID: 4558735309967460402, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
       propertyPath: m_Name
       value: ZC_desk1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558735309967460402, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4592965998152071852, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39647,7 +39779,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1183776232744724796, guid: a2909a8093d49ab40ae18c583404f7d2, type: 3}
       propertyPath: m_VersionIndex
-      value: 1934
+      value: 1949
       objectReference: {fileID: 0}
     - target: {fileID: 5699818276826197182, guid: a2909a8093d49ab40ae18c583404f7d2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39696,6 +39828,10 @@ PrefabInstance:
     - target: {fileID: 6600640497555249717, guid: a2909a8093d49ab40ae18c583404f7d2, type: 3}
       propertyPath: m_Name
       value: SZ_largeTable1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600640497555249717, guid: a2909a8093d49ab40ae18c583404f7d2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -39752,6 +39888,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZC_safeZone_Door2
       objectReference: {fileID: 0}
+    - target: {fileID: 5235803314932783897, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8575807055135665564, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.82
@@ -39794,7 +39934,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9040701926699623268, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
       propertyPath: m_VersionIndex
-      value: 2407
+      value: 2422
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7888030698889643569, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
@@ -39848,13 +39988,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZF_reportCode
       objectReference: {fileID: 0}
+    - target: {fileID: 538674108538347553, guid: 9258789af276d1848aea94bc21a77de5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2220103632421595838, guid: 9258789af276d1848aea94bc21a77de5, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 1345801393f67f245a88f439e41724b7, type: 2}
     - target: {fileID: 2351773904049860666, guid: 9258789af276d1848aea94bc21a77de5, type: 3}
       propertyPath: m_VersionIndex
-      value: 1928
+      value: 1943
       objectReference: {fileID: 0}
     - target: {fileID: 7604149420058900946, guid: 9258789af276d1848aea94bc21a77de5, type: 3}
       propertyPath: m_LocalScale.y
@@ -39954,11 +40098,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 338ba4b87b93c6949a0de4b7f449a771, type: 2}
     - target: {fileID: 3683110191441803591, guid: c26f23deaab1dbb4abef86f6c3545ac6, type: 3}
       propertyPath: m_VersionIndex
-      value: 3388
+      value: 3403
       objectReference: {fileID: 0}
     - target: {fileID: 4694087376267585359, guid: c26f23deaab1dbb4abef86f6c3545ac6, type: 3}
       propertyPath: m_Name
       value: Start_door
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694087376267585359, guid: c26f23deaab1dbb4abef86f6c3545ac6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6840240463398681662, guid: c26f23deaab1dbb4abef86f6c3545ac6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -40050,7 +40198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
   openOffset: {x: 0, y: 3, z: 0}
-  openDuration: 1
+  openSpeed: 3
   isOpen: 0
 --- !u!4 &2204065467069892708 stripped
 Transform:
@@ -40072,6 +40220,10 @@ PrefabInstance:
     - target: {fileID: 5235803314932783897, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
       propertyPath: m_Name
       value: SZ_safeZone_Door3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235803314932783897, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8575807055135665564, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
       propertyPath: m_LocalScale.z
@@ -40119,7 +40271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9040701926699623268, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
       propertyPath: m_VersionIndex
-      value: 2401
+      value: 2416
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7888030698889643569, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
@@ -40213,13 +40365,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZE_tank2
       objectReference: {fileID: 0}
+    - target: {fileID: 4877759532577910272, guid: bc5f8cd5b9077d44c91819fef22cf25e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7930156608164010195, guid: bc5f8cd5b9077d44c91819fef22cf25e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5884df04201b2cb4294b4cf2da31a53a, type: 2}
     - target: {fileID: 8876708784513020435, guid: bc5f8cd5b9077d44c91819fef22cf25e, type: 3}
       propertyPath: m_VersionIndex
-      value: 1211
+      value: 1226
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8085100947062493484, guid: bc5f8cd5b9077d44c91819fef22cf25e, type: 3}
@@ -40313,13 +40469,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZE_tank10
       objectReference: {fileID: 0}
+    - target: {fileID: 4877759532577910272, guid: bc5f8cd5b9077d44c91819fef22cf25e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7930156608164010195, guid: bc5f8cd5b9077d44c91819fef22cf25e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5884df04201b2cb4294b4cf2da31a53a, type: 2}
     - target: {fileID: 8876708784513020435, guid: bc5f8cd5b9077d44c91819fef22cf25e, type: 3}
       propertyPath: m_VersionIndex
-      value: 1217
+      value: 1232
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8085100947062493484, guid: bc5f8cd5b9077d44c91819fef22cf25e, type: 3}
@@ -40373,9 +40533,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZB_pipe2
       objectReference: {fileID: 0}
+    - target: {fileID: 5300293251504804850, guid: 68b5e2424a791d0479f9ffaeb1730647, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6104342149929415728, guid: 68b5e2424a791d0479f9ffaeb1730647, type: 3}
       propertyPath: m_VersionIndex
-      value: 858
+      value: 873
       objectReference: {fileID: 0}
     - target: {fileID: 8420829948174362830, guid: 68b5e2424a791d0479f9ffaeb1730647, type: 3}
       propertyPath: m_LocalPosition.x
@@ -40471,11 +40635,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3126065900295303282, guid: a70813e280d39a549a51688714139c5a, type: 3}
       propertyPath: m_VersionIndex
-      value: 2765
+      value: 2780
       objectReference: {fileID: 0}
     - target: {fileID: 3998755126099202818, guid: a70813e280d39a549a51688714139c5a, type: 3}
       propertyPath: m_Name
       value: ZD_bigComputer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3998755126099202818, guid: a70813e280d39a549a51688714139c5a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4438508490010467221, guid: a70813e280d39a549a51688714139c5a, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -40543,13 +40711,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZF_machine
       objectReference: {fileID: 0}
+    - target: {fileID: 491505079373871352, guid: c2c6ab97e1f7b994d8ddbac6c99e307d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1166679971034398379, guid: c2c6ab97e1f7b994d8ddbac6c99e307d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5884df04201b2cb4294b4cf2da31a53a, type: 2}
     - target: {fileID: 2529235366528674889, guid: c2c6ab97e1f7b994d8ddbac6c99e307d, type: 3}
       propertyPath: m_VersionIndex
-      value: 1925
+      value: 1940
       objectReference: {fileID: 0}
     - target: {fileID: 5317801182754123226, guid: c2c6ab97e1f7b994d8ddbac6c99e307d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -40647,6 +40819,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SZ_codePanel2
       objectReference: {fileID: 0}
+    - target: {fileID: 2269010006161459878, guid: ced761fe831c30a46a4c349b25b73ebc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4054555175045708211, guid: ced761fe831c30a46a4c349b25b73ebc, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.039597362
@@ -40697,7 +40873,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6088269633900124778, guid: ced761fe831c30a46a4c349b25b73ebc, type: 3}
       propertyPath: m_VersionIndex
-      value: 1928
+      value: 1943
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8113321561628874737, guid: ced761fe831c30a46a4c349b25b73ebc, type: 3}
@@ -40751,9 +40927,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZB_pipe1
       objectReference: {fileID: 0}
+    - target: {fileID: 5300293251504804850, guid: 68b5e2424a791d0479f9ffaeb1730647, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6104342149929415728, guid: 68b5e2424a791d0479f9ffaeb1730647, type: 3}
       propertyPath: m_VersionIndex
-      value: 858
+      value: 873
       objectReference: {fileID: 0}
     - target: {fileID: 8420829948174362830, guid: 68b5e2424a791d0479f9ffaeb1730647, type: 3}
       propertyPath: m_LocalPosition.x
@@ -40891,9 +41071,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZB_chair
       objectReference: {fileID: 0}
+    - target: {fileID: 5496095677671886991, guid: a1ea447169ae4fa4c97fd49f73350496, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7042183703274085716, guid: a1ea447169ae4fa4c97fd49f73350496, type: 3}
       propertyPath: m_VersionIndex
-      value: 2430
+      value: 2445
       objectReference: {fileID: 0}
     - target: {fileID: 8129342177815269904, guid: a1ea447169ae4fa4c97fd49f73350496, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -40979,6 +41163,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SZ_safeZone_Door2
       objectReference: {fileID: 0}
+    - target: {fileID: 5235803314932783897, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8575807055135665564, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.6399618
@@ -41025,7 +41213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9040701926699623268, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
       propertyPath: m_VersionIndex
-      value: 2401
+      value: 2416
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7888030698889643569, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
@@ -41077,11 +41265,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 81733403041336726, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
       propertyPath: m_VersionIndex
-      value: 1925
+      value: 1940
       objectReference: {fileID: 0}
     - target: {fileID: 4558735309967460402, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
       propertyPath: m_Name
       value: ZC_desk2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558735309967460402, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4592965998152071852, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -41219,9 +41411,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: EZ_chair
       objectReference: {fileID: 0}
+    - target: {fileID: 5496095677671886991, guid: a1ea447169ae4fa4c97fd49f73350496, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7042183703274085716, guid: a1ea447169ae4fa4c97fd49f73350496, type: 3}
       propertyPath: m_VersionIndex
-      value: 2430
+      value: 2445
       objectReference: {fileID: 0}
     - target: {fileID: 8129342177815269904, guid: a1ea447169ae4fa4c97fd49f73350496, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -41253,9 +41449,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZE_tank3
       objectReference: {fileID: 0}
+    - target: {fileID: 1435290604385119360, guid: 85af00119e1abea4398428feb84de8d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2812860764206088507, guid: 85af00119e1abea4398428feb84de8d3, type: 3}
       propertyPath: m_VersionIndex
-      value: 1220
+      value: 1235
       objectReference: {fileID: 0}
     - target: {fileID: 9177041736839558104, guid: 85af00119e1abea4398428feb84de8d3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -41389,9 +41589,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZC_chair3
       objectReference: {fileID: 0}
+    - target: {fileID: 5496095677671886991, guid: a1ea447169ae4fa4c97fd49f73350496, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7042183703274085716, guid: a1ea447169ae4fa4c97fd49f73350496, type: 3}
       propertyPath: m_VersionIndex
-      value: 2430
+      value: 2445
       objectReference: {fileID: 0}
     - target: {fileID: 8129342177815269904, guid: a1ea447169ae4fa4c97fd49f73350496, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -41447,7 +41651,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2246502375383364434, guid: 29c8d5ce7b015b64ab370cb21b4bbb9b, type: 3}
       propertyPath: m_VersionIndex
-      value: 1215
+      value: 1230
       objectReference: {fileID: 0}
     - target: {fileID: 3144979108753213530, guid: 29c8d5ce7b015b64ab370cb21b4bbb9b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -41496,6 +41700,10 @@ PrefabInstance:
     - target: {fileID: 9014298012871989253, guid: 29c8d5ce7b015b64ab370cb21b4bbb9b, type: 3}
       propertyPath: m_Name
       value: ZB_generator1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014298012871989253, guid: 29c8d5ce7b015b64ab370cb21b4bbb9b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -41546,11 +41754,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 81733403041336726, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
       propertyPath: m_VersionIndex
-      value: 1925
+      value: 1940
       objectReference: {fileID: 0}
     - target: {fileID: 4558735309967460402, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
       propertyPath: m_Name
       value: ZB_desk
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558735309967460402, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4592965998152071852, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -41712,13 +41924,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZE_tank5
       objectReference: {fileID: 0}
+    - target: {fileID: 4877759532577910272, guid: bc5f8cd5b9077d44c91819fef22cf25e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7930156608164010195, guid: bc5f8cd5b9077d44c91819fef22cf25e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5884df04201b2cb4294b4cf2da31a53a, type: 2}
     - target: {fileID: 8876708784513020435, guid: bc5f8cd5b9077d44c91819fef22cf25e, type: 3}
       propertyPath: m_VersionIndex
-      value: 1217
+      value: 1232
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8085100947062493484, guid: bc5f8cd5b9077d44c91819fef22cf25e, type: 3}
@@ -41810,11 +42026,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6412135397312692173, guid: 26aced45a66f4444287a0f151f2d5fd0, type: 3}
       propertyPath: m_VersionIndex
-      value: 1925
+      value: 1940
       objectReference: {fileID: 0}
     - target: {fileID: 6970890429974168725, guid: 26aced45a66f4444287a0f151f2d5fd0, type: 3}
       propertyPath: m_Name
       value: ZC_machine1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6970890429974168725, guid: 26aced45a66f4444287a0f151f2d5fd0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7045570251727046322, guid: 26aced45a66f4444287a0f151f2d5fd0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -41914,11 +42134,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5884df04201b2cb4294b4cf2da31a53a, type: 2}
     - target: {fileID: 4273047149902975063, guid: 3991f5224c7c92546b44a17d54ccf42e, type: 3}
       propertyPath: m_VersionIndex
-      value: 1145
+      value: 1160
       objectReference: {fileID: 0}
     - target: {fileID: 6932171172931711353, guid: 3991f5224c7c92546b44a17d54ccf42e, type: 3}
       propertyPath: m_Name
       value: ZB_baseGenerator1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932171172931711353, guid: 3991f5224c7c92546b44a17d54ccf42e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1916009718484075606, guid: 3991f5224c7c92546b44a17d54ccf42e, type: 3}
@@ -41976,7 +42200,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5884df04201b2cb4294b4cf2da31a53a, type: 2}
     - target: {fileID: 763545114591920662, guid: eb099670e3603424dac06b4fdc4fc4fe, type: 3}
       propertyPath: m_VersionIndex
-      value: 1934
+      value: 1949
       objectReference: {fileID: 0}
     - target: {fileID: 2574127089966731599, guid: eb099670e3603424dac06b4fdc4fc4fe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -42021,6 +42245,10 @@ PrefabInstance:
     - target: {fileID: 7001940744668962833, guid: eb099670e3603424dac06b4fdc4fc4fe, type: 3}
       propertyPath: m_Name
       value: SZ_smallTable1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7001940744668962833, guid: eb099670e3603424dac06b4fdc4fc4fe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -42071,11 +42299,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3126065900295303282, guid: a70813e280d39a549a51688714139c5a, type: 3}
       propertyPath: m_VersionIndex
-      value: 2771
+      value: 2786
       objectReference: {fileID: 0}
     - target: {fileID: 3998755126099202818, guid: a70813e280d39a549a51688714139c5a, type: 3}
       propertyPath: m_Name
       value: SZ_bigComputer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3998755126099202818, guid: a70813e280d39a549a51688714139c5a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4438508490010467221, guid: a70813e280d39a549a51688714139c5a, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -42210,11 +42442,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6412135397312692173, guid: 26aced45a66f4444287a0f151f2d5fd0, type: 3}
       propertyPath: m_VersionIndex
-      value: 1925
+      value: 1940
       objectReference: {fileID: 0}
     - target: {fileID: 6970890429974168725, guid: 26aced45a66f4444287a0f151f2d5fd0, type: 3}
       propertyPath: m_Name
       value: SZ_machine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6970890429974168725, guid: 26aced45a66f4444287a0f151f2d5fd0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7045570251727046322, guid: 26aced45a66f4444287a0f151f2d5fd0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -42245,6 +42481,10 @@ PrefabInstance:
     - target: {fileID: 5235803314932783897, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
       propertyPath: m_Name
       value: ZA_safeZone_Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235803314932783897, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8575807055135665564, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -42288,7 +42528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9040701926699623268, guid: 5758de2eebf22bf42be35553b0e85e5d, type: 3}
       propertyPath: m_VersionIndex
-      value: 2401
+      value: 2416
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -42341,13 +42581,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZG_reportCode
       objectReference: {fileID: 0}
+    - target: {fileID: 538674108538347553, guid: 9258789af276d1848aea94bc21a77de5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2220103632421595838, guid: 9258789af276d1848aea94bc21a77de5, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 1345801393f67f245a88f439e41724b7, type: 2}
     - target: {fileID: 2351773904049860666, guid: 9258789af276d1848aea94bc21a77de5, type: 3}
       propertyPath: m_VersionIndex
-      value: 1934
+      value: 1949
       objectReference: {fileID: 0}
     - target: {fileID: 7604149420058900946, guid: 9258789af276d1848aea94bc21a77de5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -42479,11 +42723,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6412135397312692173, guid: 26aced45a66f4444287a0f151f2d5fd0, type: 3}
       propertyPath: m_VersionIndex
-      value: 1925
+      value: 1940
       objectReference: {fileID: 0}
     - target: {fileID: 6970890429974168725, guid: 26aced45a66f4444287a0f151f2d5fd0, type: 3}
       propertyPath: m_Name
       value: EZ_machine1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6970890429974168725, guid: 26aced45a66f4444287a0f151f2d5fd0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7045570251727046322, guid: 26aced45a66f4444287a0f151f2d5fd0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -42514,6 +42762,10 @@ PrefabInstance:
     - target: {fileID: 2016003880870806966, guid: e8a44ed80aadca94d8b9962d771e3c8b, type: 3}
       propertyPath: m_Name
       value: ZB_machine3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016003880870806966, guid: e8a44ed80aadca94d8b9962d771e3c8b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5080166927639753457, guid: e8a44ed80aadca94d8b9962d771e3c8b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -42557,7 +42809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7553269522832757381, guid: e8a44ed80aadca94d8b9962d771e3c8b, type: 3}
       propertyPath: m_VersionIndex
-      value: 2367
+      value: 2382
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7505469492495491575, guid: e8a44ed80aadca94d8b9962d771e3c8b, type: 3}
@@ -42633,7 +42885,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5075321402776572946, guid: 3931f3e49dad10c45a93ba68beed9b20, type: 3}
       propertyPath: m_VersionIndex
-      value: 2289
+      value: 2304
       objectReference: {fileID: 0}
     - target: {fileID: 5842689549021836996, guid: 3931f3e49dad10c45a93ba68beed9b20, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -42682,6 +42934,10 @@ PrefabInstance:
     - target: {fileID: 9036044775609892453, guid: 3931f3e49dad10c45a93ba68beed9b20, type: 3}
       propertyPath: m_Name
       value: ZA_desk2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9036044775609892453, guid: 3931f3e49dad10c45a93ba68beed9b20, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -42762,9 +43018,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZE_tank9
       objectReference: {fileID: 0}
+    - target: {fileID: 1435290604385119360, guid: 85af00119e1abea4398428feb84de8d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2812860764206088507, guid: 85af00119e1abea4398428feb84de8d3, type: 3}
       propertyPath: m_VersionIndex
-      value: 1211
+      value: 1226
       objectReference: {fileID: 0}
     - target: {fileID: 9177041736839558104, guid: 85af00119e1abea4398428feb84de8d3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -42862,6 +43122,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EZ_machine2
       objectReference: {fileID: 0}
+    - target: {fileID: 2016003880870806966, guid: e8a44ed80aadca94d8b9962d771e3c8b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5080166927639753457, guid: e8a44ed80aadca94d8b9962d771e3c8b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.85196126
@@ -42912,7 +43176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7553269522832757381, guid: e8a44ed80aadca94d8b9962d771e3c8b, type: 3}
       propertyPath: m_VersionIndex
-      value: 2358
+      value: 2373
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -42976,13 +43240,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZF_tank4
       objectReference: {fileID: 0}
+    - target: {fileID: 4877759532577910272, guid: bc5f8cd5b9077d44c91819fef22cf25e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7930156608164010195, guid: bc5f8cd5b9077d44c91819fef22cf25e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5884df04201b2cb4294b4cf2da31a53a, type: 2}
     - target: {fileID: 8876708784513020435, guid: bc5f8cd5b9077d44c91819fef22cf25e, type: 3}
       propertyPath: m_VersionIndex
-      value: 1211
+      value: 1226
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8085100947062493484, guid: bc5f8cd5b9077d44c91819fef22cf25e, type: 3}
@@ -43074,11 +43342,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5977822190497549143, guid: 7798b562c69687b4686a50b874d7e950, type: 3}
       propertyPath: m_VersionIndex
-      value: 1931
+      value: 1946
       objectReference: {fileID: 0}
     - target: {fileID: 8035501520798045632, guid: 7798b562c69687b4686a50b874d7e950, type: 3}
       propertyPath: m_Name
       value: SZ_locker
+      objectReference: {fileID: 0}
+    - target: {fileID: 8035501520798045632, guid: 7798b562c69687b4686a50b874d7e950, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8454443184337853894, guid: 7798b562c69687b4686a50b874d7e950, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -43133,11 +43405,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 81733403041336726, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
       propertyPath: m_VersionIndex
-      value: 1925
+      value: 1940
       objectReference: {fileID: 0}
     - target: {fileID: 4558735309967460402, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
       propertyPath: m_Name
       value: ZG_desk2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558735309967460402, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4592965998152071852, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
       propertyPath: m_LocalScale.z
@@ -43239,13 +43515,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: SZ_reportCode
       objectReference: {fileID: 0}
+    - target: {fileID: 538674108538347553, guid: 9258789af276d1848aea94bc21a77de5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2220103632421595838, guid: 9258789af276d1848aea94bc21a77de5, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 1345801393f67f245a88f439e41724b7, type: 2}
     - target: {fileID: 2351773904049860666, guid: 9258789af276d1848aea94bc21a77de5, type: 3}
       propertyPath: m_VersionIndex
-      value: 1928
+      value: 1943
       objectReference: {fileID: 0}
     - target: {fileID: 7604149420058900946, guid: 9258789af276d1848aea94bc21a77de5, type: 3}
       propertyPath: m_LocalScale.y
@@ -43380,11 +43660,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6412135397312692173, guid: 26aced45a66f4444287a0f151f2d5fd0, type: 3}
       propertyPath: m_VersionIndex
-      value: 1925
+      value: 1940
       objectReference: {fileID: 0}
     - target: {fileID: 6970890429974168725, guid: 26aced45a66f4444287a0f151f2d5fd0, type: 3}
       propertyPath: m_Name
       value: ZD_machine1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6970890429974168725, guid: 26aced45a66f4444287a0f151f2d5fd0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7045570251727046322, guid: 26aced45a66f4444287a0f151f2d5fd0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -43442,9 +43726,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZE_tank1
       objectReference: {fileID: 0}
+    - target: {fileID: 95329449133544097, guid: cd9dff42a601796409b992141e1a4947, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1799494387273152312, guid: cd9dff42a601796409b992141e1a4947, type: 3}
       propertyPath: m_VersionIndex
-      value: 1220
+      value: 1235
       objectReference: {fileID: 0}
     - target: {fileID: 2236264425416989954, guid: cd9dff42a601796409b992141e1a4947, type: 3}
       propertyPath: m_LocalPosition.x
@@ -43582,9 +43870,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZC_chair1
       objectReference: {fileID: 0}
+    - target: {fileID: 5496095677671886991, guid: a1ea447169ae4fa4c97fd49f73350496, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7042183703274085716, guid: a1ea447169ae4fa4c97fd49f73350496, type: 3}
       propertyPath: m_VersionIndex
-      value: 2430
+      value: 2445
       objectReference: {fileID: 0}
     - target: {fileID: 8129342177815269904, guid: a1ea447169ae4fa4c97fd49f73350496, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -43680,11 +43972,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6412135397312692173, guid: 26aced45a66f4444287a0f151f2d5fd0, type: 3}
       propertyPath: m_VersionIndex
-      value: 1934
+      value: 1949
       objectReference: {fileID: 0}
     - target: {fileID: 6970890429974168725, guid: 26aced45a66f4444287a0f151f2d5fd0, type: 3}
       propertyPath: m_Name
       value: ZB_machine2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6970890429974168725, guid: 26aced45a66f4444287a0f151f2d5fd0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7045570251727046322, guid: 26aced45a66f4444287a0f151f2d5fd0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -43742,9 +44038,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZF_tank3
       objectReference: {fileID: 0}
+    - target: {fileID: 95329449133544097, guid: cd9dff42a601796409b992141e1a4947, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1799494387273152312, guid: cd9dff42a601796409b992141e1a4947, type: 3}
       propertyPath: m_VersionIndex
-      value: 1211
+      value: 1226
       objectReference: {fileID: 0}
     - target: {fileID: 2236264425416989954, guid: cd9dff42a601796409b992141e1a4947, type: 3}
       propertyPath: m_LocalPosition.x
@@ -43846,6 +44146,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZE_codePanel
       objectReference: {fileID: 0}
+    - target: {fileID: 2269010006161459878, guid: ced761fe831c30a46a4c349b25b73ebc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4054555175045708211, guid: ced761fe831c30a46a4c349b25b73ebc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.12
@@ -43888,7 +44192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6088269633900124778, guid: ced761fe831c30a46a4c349b25b73ebc, type: 3}
       propertyPath: m_VersionIndex
-      value: 1934
+      value: 1949
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8113321561628874737, guid: ced761fe831c30a46a4c349b25b73ebc, type: 3}
@@ -43940,7 +44244,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3634716274809770740, guid: fd4bac6be9aa5544b8aca2e778dd4683, type: 3}
       propertyPath: m_VersionIndex
-      value: 3137
+      value: 3152
       objectReference: {fileID: 0}
     - target: {fileID: 4349349319613190884, guid: fd4bac6be9aa5544b8aca2e778dd4683, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -43998,6 +44302,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZD_computer1
       objectReference: {fileID: 0}
+    - target: {fileID: 7789613443842052554, guid: fd4bac6be9aa5544b8aca2e778dd4683, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -44047,11 +44355,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 81733403041336726, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
       propertyPath: m_VersionIndex
-      value: 1925
+      value: 1940
       objectReference: {fileID: 0}
     - target: {fileID: 4558735309967460402, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
       propertyPath: m_Name
       value: ZC_desk3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558735309967460402, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4592965998152071852, guid: 27d2a9d660a041e4692232a817e1e9e5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -44147,7 +44459,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3634716274809770740, guid: fd4bac6be9aa5544b8aca2e778dd4683, type: 3}
       propertyPath: m_VersionIndex
-      value: 3143
+      value: 3158
       objectReference: {fileID: 0}
     - target: {fileID: 4349349319613190884, guid: fd4bac6be9aa5544b8aca2e778dd4683, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -44196,6 +44508,10 @@ PrefabInstance:
     - target: {fileID: 7789613443842052554, guid: fd4bac6be9aa5544b8aca2e778dd4683, type: 3}
       propertyPath: m_Name
       value: ZE_computer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789613443842052554, guid: fd4bac6be9aa5544b8aca2e778dd4683, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7621353770570610097, guid: fd4bac6be9aa5544b8aca2e778dd4683, type: 3}
@@ -44251,11 +44567,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 338ba4b87b93c6949a0de4b7f449a771, type: 2}
     - target: {fileID: 3683110191441803591, guid: c26f23deaab1dbb4abef86f6c3545ac6, type: 3}
       propertyPath: m_VersionIndex
-      value: 3388
+      value: 3403
       objectReference: {fileID: 0}
     - target: {fileID: 4694087376267585359, guid: c26f23deaab1dbb4abef86f6c3545ac6, type: 3}
       propertyPath: m_Name
       value: ZG_securityDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694087376267585359, guid: c26f23deaab1dbb4abef86f6c3545ac6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6840240463398681662, guid: c26f23deaab1dbb4abef86f6c3545ac6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -44353,7 +44673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
   openOffset: {x: 0, y: 3, z: 0}
-  openDuration: 1
+  openSpeed: 3
   isOpen: 0
 --- !u!1001 &8881068675825244139
 PrefabInstance:
@@ -44370,6 +44690,10 @@ PrefabInstance:
     - target: {fileID: 2269010006161459878, guid: ced761fe831c30a46a4c349b25b73ebc, type: 3}
       propertyPath: m_Name
       value: ZA_codePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269010006161459878, guid: ced761fe831c30a46a4c349b25b73ebc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4054555175045708211, guid: ced761fe831c30a46a4c349b25b73ebc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -44413,7 +44737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6088269633900124778, guid: ced761fe831c30a46a4c349b25b73ebc, type: 3}
       propertyPath: m_VersionIndex
-      value: 1928
+      value: 1943
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8113321561628874737, guid: ced761fe831c30a46a4c349b25b73ebc, type: 3}
@@ -44467,9 +44791,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZF_tank2
       objectReference: {fileID: 0}
+    - target: {fileID: 95329449133544097, guid: cd9dff42a601796409b992141e1a4947, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1799494387273152312, guid: cd9dff42a601796409b992141e1a4947, type: 3}
       propertyPath: m_VersionIndex
-      value: 1211
+      value: 1226
       objectReference: {fileID: 0}
     - target: {fileID: 2236264425416989954, guid: cd9dff42a601796409b992141e1a4947, type: 3}
       propertyPath: m_LocalPosition.x
@@ -44567,13 +44895,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZA_machine1
       objectReference: {fileID: 0}
+    - target: {fileID: 491505079373871352, guid: c2c6ab97e1f7b994d8ddbac6c99e307d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1166679971034398379, guid: c2c6ab97e1f7b994d8ddbac6c99e307d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5884df04201b2cb4294b4cf2da31a53a, type: 2}
     - target: {fileID: 2529235366528674889, guid: c2c6ab97e1f7b994d8ddbac6c99e307d, type: 3}
       propertyPath: m_VersionIndex
-      value: 1925
+      value: 1940
       objectReference: {fileID: 0}
     - target: {fileID: 5317801182754123226, guid: c2c6ab97e1f7b994d8ddbac6c99e307d, type: 3}
       propertyPath: m_LocalPosition.x
