@@ -129,6 +129,9 @@ public class SecurityCameraDetection : MonoBehaviour
         // apagar la alarma después del tiempo especificado
         if (alarmCoroutine != null) StopCoroutine(alarmCoroutine);
         alarmCoroutine = StartCoroutine(AlarmSequenceRoutine());
+
+        // si la camara llego a dispararse el jugador fue detectado y pierde
+        GameFlow.Defeat();
     }
 
     private IEnumerator AlarmSequenceRoutine()
