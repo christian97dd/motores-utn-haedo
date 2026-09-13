@@ -1,17 +1,15 @@
-using System.Collections;
 using UnityEngine;
 
 public class Door : MonoBehaviour
 {
     [Header("Apertura")]
     [SerializeField] private Vector3 openOffset = new Vector3(0f, 3f, 0f); // Desplazamiento desde la posición cerrada
-    [SerializeField] private float openDuration = 1f; // Segundos que tarda en abrir o cerrar
+    [SerializeField] private float openSpeed = 3f; // Unidades por segundo
 
     [Header("Testeo de estados")]
     [SerializeField] private bool isOpen = false;
 
     private Vector3 closedPosition;
-    private Coroutine moveCoroutine;
 
     private void Awake()
     {
@@ -22,24 +20,15 @@ public class Door : MonoBehaviour
     public void Toggle()
     {
         isOpen = !isOpen;
-
-        if (moveCoroutine != null) StopCoroutine(moveCoroutine);
-        moveCoroutine = StartCoroutine(MoveToRoutine(isOpen ? closedPosition + openOffset : closedPosition));
     }
 
-    private IEnumerator MoveToRoutine(Vector3 target)
+    private void Update()
     {
-        Vector3 start = transform.position;
-        float t = 0f;
+        Vector3 target = isOpen ? closedPosition + openOffset : closedPosition;
 
-        while (t < 1f)
-        {
-            t += Time.deltaTime / openDuration;
-            transform.position = Vector3.Lerp(start, target, t);
-            yield return null;
-        }
+        if (transform.position == target) return;
 
-        transform.position = target;
+        transform.position = Vector3.MoveTowards(transform.position, target, openSpeed * Time.deltaTime);
     }
 
     // Marca en la escena dónde va a quedar la puerta abierta
