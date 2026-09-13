@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 527466460463048274}
   - component: {fileID: 6043773326835930607}
   - component: {fileID: 6363904557631467529}
+  - component: {fileID: 6043844764180145614}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -127,6 +128,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
   interactionRange: 3
   eyeHeight: 1
+--- !u!114 &6043844764180145614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4153208636756810307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b54a90aa4f1694a6a88ef7c7ac74852f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ThrowDistraction
+  distractionPrefab: {fileID: 3002555588543108275, guid: c70402c1fe6d348a6b76869bb9cb751a, type: 3}
+  throwOrigin: {fileID: 0}
+  throwForce: 8
 --- !u!1001 &1784528749115908713
 PrefabInstance:
   m_ObjectHideFlags: 0
