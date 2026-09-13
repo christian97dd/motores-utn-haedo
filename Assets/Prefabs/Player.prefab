@@ -108,13 +108,11 @@ MonoBehaviour:
   playerCharacterController: {fileID: 527466460463048274}
   playerCamera: {fileID: 0}
   playerGravity: -9.8
-  groundCheckType: 1
   groundCheckPivot: {fileID: 0}
   groundCheckRadius: 0.3
-  groundCheckDistance: 0.2
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!114 &6363904557631467529
 MonoBehaviour:
   m_ObjectHideFlags: 0
