@@ -21,9 +21,9 @@ public class Player : MonoBehaviour
     private float playerRotateDampening = 0.1f;
     private float turnSmoothingVelocity;
 
-    [SerializeField] private float playerGravity = -9.8f;
+    [SerializeField] private float playerGravity = -9.8f; // la misma que figura en project settings
     private float _verticalVelocity;
-    private float groundedVerticalVelocity = -2f;
+    private float groundedVerticalVelocity = -2f; // lo mantiene pegado al piso, con 0 el isGrounded parpadea
 
     [Header("Detección de suelo")]
     [SerializeField] private Transform groundCheckPivot;
@@ -77,12 +77,15 @@ public class Player : MonoBehaviour
 
         ApplyGravity();
 
+        // un solo Move por frame con el desplazamiento y la caida juntos
         Vector3 finalMove = horizontalMove + Vector3.up * _verticalVelocity;
         playerCharacterController.Move(finalMove * Time.deltaTime);
 
+        // va afuera del if, si no al soltar la tecla se queda en la animacion de caminar
         UpdatePlayerAnimator(playerDirection.magnitude, isRunning, isCrouching);
     }
 
+    // el character controller no trae fisica propia, la gravedad se aplica a mano
     private void ApplyGravity()
     {
         if (IsGrounded() && _verticalVelocity < 0f)
@@ -95,6 +98,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    // esfera y no rayo: el rayo no detecta bien en los bordes ni en las pendientes
     private bool IsGrounded()
     {
         return Physics.CheckSphere(GetGroundCheckOrigin(), groundCheckRadius, groundLayer, QueryTriggerInteraction.Ignore);
@@ -105,6 +109,7 @@ public class Player : MonoBehaviour
         return groundCheckPivot != null ? groundCheckPivot.position : transform.position;
     }
 
+    // verde si detecta piso, rojo si no. sirve para acomodar el pivot y el radio
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = IsGrounded() ? Color.green : Color.red;
