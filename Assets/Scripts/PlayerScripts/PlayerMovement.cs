@@ -30,6 +30,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float groundCheckRadius = 0.3f;
     [SerializeField] private LayerMask groundLayer;
 
+    public bool IsCrouching { get; private set; } // para que otros scripts (EnemyGuard) puedan leer el estado l67
+
     private void OnEnable()
     {
         inputActions.FindActionMap("Player").Enable();
@@ -62,6 +64,7 @@ public class Player : MonoBehaviour
 
         bool isRunning = playerSprintAction != null && playerSprintAction.IsPressed();
         bool isCrouching = playerCrouchAction != null && playerCrouchAction.IsPressed();
+        IsCrouching = isCrouching;
 
         Vector3 horizontalMove = Vector3.zero;
 
