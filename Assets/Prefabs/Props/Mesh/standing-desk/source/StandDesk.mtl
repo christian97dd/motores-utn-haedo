@@ -1,0 +1,28 @@
+# Blender MTL File: 'stand_desk_02_apply.blend'
+# Material Count: 2
+
+newmtl Desk_Top_Material
+Ns 44.646705
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.069753 0.363729
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump StandDesk_Desk_Top_Material_Normal.png
+map_Kd StandDesk_Desk_Top_Material_BaseColor.png
+map_Ns StandDesk_Desk_Top_Material_Roughness.png
+
+newmtl Legs_Material
+Ns 401.820270
+Ka 1.000000 1.000000 1.000000
+Kd 0.613562 0.004924 0.068244
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump StandDesk_Legs_Material_Normal.png
+map_Kd StandDesk_Legs_Material_BaseColor.png
+map_Ns StandDesk_Legs_Material_Roughness.png
