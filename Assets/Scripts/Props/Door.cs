@@ -6,6 +6,9 @@ public class Door : MonoBehaviour
     [SerializeField] private Vector3 openOffset = new Vector3(0f, 3f, 0f); // Desplazamiento desde la posición cerrada
     [SerializeField] private float openSpeed = 3f; // Unidades por segundo
 
+    [Header("Bloqueo")]
+    [SerializeField] private bool isLocked = false; // Si está bloqueada, Toggle() no hace nada hasta que un puzzle la desbloquee
+
     [Header("Testeo de estados")]
     [SerializeField] private bool isOpen = false;
 
@@ -19,7 +22,21 @@ public class Door : MonoBehaviour
     // Lo llama el jugador al interactuar
     public void Toggle()
     {
+        if (isLocked) return; // TODO: feedback (sonido / texto de pista)
+
         isOpen = !isOpen;
+    }
+
+    // Lo llama el puzzle al resolverse
+    public void Unlock()
+    {
+        isLocked = false;
+    }
+
+    // Abre la puerta sin alternar (no la cierra si ya estaba abierta)
+    public void Open()
+    {
+        isOpen = true;
     }
 
     private void Update()
