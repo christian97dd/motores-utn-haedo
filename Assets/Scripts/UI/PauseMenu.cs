@@ -55,6 +55,9 @@ public class PauseMenu : MonoBehaviour
 
     private void OnPausePressed(InputAction.CallbackContext context)
     {
+        // con el teclado del puzzle abierto, Esc lo cierra a el y no abre la pausa
+        if (BinaryKeypadUI.IsAnyOpen) return;
+
         if (!IsPaused)
         {
             Pause();

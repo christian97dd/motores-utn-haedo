@@ -28,6 +28,9 @@ public class BinaryKeypadUI : MonoBehaviour
     [Tooltip("Scripts de movimiento del jugador, de la cámara y PlayerInteraction que se apagan mientras se escribe")]
     [SerializeField] private Behaviour[] scriptsToDisable;
 
+    // El menú de pausa lo consulta para no abrirse con el mismo Esc que cierra el teclado
+    public static bool IsAnyOpen { get; private set; }
+
     private string currentCode = string.Empty;
     private bool isOpen;
     private bool isReady;
@@ -67,6 +70,12 @@ public class BinaryKeypadUI : MonoBehaviour
         confirmButton.onClick.RemoveListener(PressConfirm);
     }
 
+    // Si te detectan con el teclado abierto se cambia de escena sin pasar por Close()
+    private void OnDestroy()
+    {
+        if (isOpen) IsAnyOpen = false;
+    }
+
     private void Update()
     {
         // Escape cierra el teclado sin enviar nada
@@ -83,6 +92,7 @@ public class BinaryKeypadUI : MonoBehaviour
         if (!isReady || isOpen || panel.IsSolved) return;
 
         isOpen = true;
+        IsAnyOpen = true;
         currentCode = string.Empty;
         RefreshDisplay();
         keypadRoot.SetActive(true);
@@ -101,6 +111,7 @@ public class BinaryKeypadUI : MonoBehaviour
         if (!isReady || !isOpen) return;
 
         isOpen = false;
+        IsAnyOpen = false;
         keypadRoot.SetActive(false);
 
         Cursor.lockState = previousLockState;
