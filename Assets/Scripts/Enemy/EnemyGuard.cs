@@ -19,7 +19,7 @@ public class EnemyGuard : MonoBehaviour
         if (distanceToPlayer <= detectionRadius && !player.IsCrouching)
         {
             isPlayerDetected = true;
-            GameFlow.Defeat();
+            GameFlow.Defeat(DefeatCause.Android);
         }
     }
 

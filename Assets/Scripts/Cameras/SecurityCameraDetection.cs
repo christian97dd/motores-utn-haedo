@@ -131,7 +131,7 @@ public class SecurityCameraDetection : MonoBehaviour
         alarmCoroutine = StartCoroutine(AlarmSequenceRoutine());
 
         // si la camara llego a dispararse el jugador fue detectado y pierde
-        GameFlow.Defeat();
+        GameFlow.Defeat(DefeatCause.SecurityCamera);
     }
 
     private IEnumerator AlarmSequenceRoutine()
