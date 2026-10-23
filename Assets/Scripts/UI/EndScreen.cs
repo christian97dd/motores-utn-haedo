@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-// va en el canvas de victoria y derrota
+// va en el canvas del menu, la victoria y la derrota
 [RequireComponent(typeof(CanvasGroup))]
 public class EndScreen : MonoBehaviour
 {
