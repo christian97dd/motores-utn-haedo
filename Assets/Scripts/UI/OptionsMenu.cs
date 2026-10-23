@@ -30,6 +30,8 @@ public class OptionsMenu : MonoBehaviour
     [Header("Video")]
     [SerializeField] private Toggle fullscreenToggle;
 
+    public bool IsOpen => optionsView.activeSelf;
+
     private void Awake()
     {
         GameSettings.Load();

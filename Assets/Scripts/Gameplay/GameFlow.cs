@@ -9,6 +9,7 @@ public enum DefeatCause
 
 public static class GameFlow
 {
+    public const string MenuScene = "MainMenu";
     public const string GameScene = "SampleScene";
     public const string VictoryScene = "Victoria";
     public const string DefeatScene = "Derrota";
@@ -30,5 +31,10 @@ public static class GameFlow
     public static void PlayAgain()
     {
         SceneManager.LoadScene(GameScene);
+    }
+
+    public static void GoToMenu()
+    {
+        SceneManager.LoadScene(MenuScene);
     }
 }
