@@ -35,9 +35,9 @@ public class PlayerInteraction : MonoBehaviour
             {
                 door.Toggle();
             }
-            else if (hit.collider.TryGetComponent(out BinaryKeypadInteractable keypadInteractable))
+            else if (hit.collider.TryGetComponent(out PuzzleInteractable puzzleInteractable))
             {
-                keypadInteractable.Interact();
+                puzzleInteractable.Interact();
             }
         }
     }

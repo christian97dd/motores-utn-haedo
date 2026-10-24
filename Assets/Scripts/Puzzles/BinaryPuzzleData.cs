@@ -13,8 +13,16 @@ public class BinaryPuzzleData : ScriptableObject
 
     [SerializeField] private int targetValue = 42;
 
+    [Header("Ayudas en pantalla")]
+    [Tooltip("Muestra debajo de cada casillero cuánto vale ese bit (128, 64, 32...)")]
+    [SerializeField] private bool showBitWeights = true;
+    [Tooltip("Muestra el valor en decimal de lo que se va escribiendo")]
+    [SerializeField] private bool showDecimalValue = true;
+
     public int BitCount => bitCount;
     public int TargetValue => targetValue;
+    public bool ShowBitWeights => showBitWeights;
+    public bool ShowDecimalValue => showDecimalValue;
 
     // Mayor número que entra en bitCount bits (8 bits = 255)
     public int MaxValue => (1 << bitCount) - 1;
