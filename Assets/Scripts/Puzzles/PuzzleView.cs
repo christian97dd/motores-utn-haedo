@@ -27,4 +27,11 @@ public abstract class PuzzleView : MonoBehaviour
     public virtual string Instructions => "";
     public virtual string ErrorMessage => "INCORRECTO";
     public virtual string SolvedMessage => "ACCESO CONCEDIDO";
+    public virtual string Controls => "ESC para salir";
+
+    // para los puzzles que cambian el mensaje mientras se juegan (piezas que faltan, cables conectados)
+    protected void RefreshMessage()
+    {
+        if (PuzzleWindow.Current != null) PuzzleWindow.Current.RefreshMessage();
+    }
 }
