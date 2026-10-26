@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7734f3326e1b04bd4a8610eee03ffbc6, type: 3}
+  m_Name: InformeTanqueE10
+  m_EditorClassIdentifier: Assembly-CSharp::DocumentData
+  title: "INFORME DE CONTENCI\xD3N"
+  subtitle: "PROYECTO DE TRANSFORMACI\xD3N // SALA E \xB7 L\xCDNEA DE ENSAMBLAJE"
+  terminalLabel: "> TERMINAL DE CONTROL \xB7 SALA E"
+  headline: "TANQUE E-10 \xB7 VAC\xCDO"
+  stamp: URGENTE
+  photo: {fileID: 21300000, guid: 8b56a050cdad94e2d9043e426b3f0860, type: 3}
+  photoCaption: "TANQUE E-10 \xB7 CAM 2"
+  fields:
+  - label: SUJETOS
+    value: "10 \xB7 conscientes: 1"
+    style: 2
+  - label: UNIDAD AUSENTE
+    value: "0427 \xB7 sin recuperar"
+    style: 2
+  - label: "ENERG\xCDA DE SALIDA"
+    value: "desviada a contenci\xF3n"
+    style: 1
+  - label: PROTOCOLO ACTIVO
+    value: "HIDE \xB7 salidas cerradas"
+    style: 0
+  noteAuthor: MENSAJE SIN FIRMA
+  noteBody: "Si est\xE1s leyendo esto, sos el 42. No sos una unidad: te sacaron de
+    tu casa hace once d\xEDas. HIDE le cort\xF3 la energ\xEDa a la salida para que
+    no puedas irte. Reorient\xE1 el circuito desde el panel de la puerta y no mires
+    a las c\xE1maras."
+  clueText: Reorientar el circuito de la salida
+  codeSource: {fileID: 0}
