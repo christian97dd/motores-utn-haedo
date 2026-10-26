@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7734f3326e1b04bd4a8610eee03ffbc6, type: 3}
+  m_Name: FichaSujeto42
+  m_EditorClassIdentifier: Assembly-CSharp::DocumentData
+  title: FICHA DE SUJETO
+  subtitle: "PROYECTO DE TRANSFORMACI\xD3N // ACCESO NIVEL 3"
+  terminalLabel: "> ARCHIVO M\xC9DICO \xB7 LABORATORIO B-2"
+  headline: "SUJETO N.\xBA {codigo}"
+  stamp: CONFIDENCIAL
+  photo: {fileID: 21300000, guid: 905f25ba659f4426b899ca0cdd5de494, type: 3}
+  photoCaption: REGISTRO 0427-B
+  fields:
+  - label: ESTADO
+    value: "TRANSFORMACI\xD3N INCOMPLETA"
+    style: 2
+  - label: FASE ALCANZADA
+    value: "3 de 4 \xB7 software rechazado"
+    style: 0
+  - label: NIVEL DE AMENAZA
+    value: ALTO
+    style: 1
+  - label: IMPLANTES
+    value: Brazo derecho, columna, ojo derecho
+    style: 0
+  noteAuthor: "NOTA DEL DR. V\xC1LEK"
+  noteBody: "El {codigo} despert\xF3 antes de terminar la fase 4. El sistema ya no
+    lo reconoce como sujeto: lo marc\xF3 como unidad defectuosa. Cambi\xE9 el acceso
+    de la puerta B-2 a su n\xFAmero para que nadie m\xE1s entre. Si est\xE1s leyendo
+    esto, cerr\xE1 la puerta detr\xE1s tuyo."
+  clueText: "C\xF3digo de la puerta B-2"
+  codeSource: {fileID: 11400000, guid: 408a2c1b87b59f24895961fdeb5986ff, type: 2}
