@@ -55,8 +55,8 @@ public class PauseMenu : MonoBehaviour
 
     private void OnPausePressed(InputAction.CallbackContext context)
     {
-        // con un puzzle abierto, Esc lo cierra a el y no abre la pausa
-        if (PuzzleWindow.IsAnyOpen) return;
+        // con un puzzle o una ficha abierta, Esc la cierra a ella y no abre la pausa
+        if (PuzzleWindow.IsAnyOpen || DocumentWindow.IsOpen) return;
 
         if (!IsPaused)
         {

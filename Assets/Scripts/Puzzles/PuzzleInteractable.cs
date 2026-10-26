@@ -1,10 +1,17 @@
 using UnityEngine;
 
-// Va en el objeto de la pared que mira el jugador (tiene que tener el Collider).
-// PlayerInteraction llama a Interact() y se abre el puzzle asignado, sea del tipo que sea.
-public class PuzzleInteractable : MonoBehaviour
+// va en el panel de la pared (necesita collider)
+public class PuzzleInteractable : MonoBehaviour, IInteractable
 {
     [SerializeField] private Puzzle puzzle;
+
+    [Header("Leyenda")]
+    [SerializeField] private string displayName = "PANEL DE ACCESO";
+    [SerializeField] private string actionText = "Usar panel";
+
+    public InteractionPrompt Prompt => puzzle != null && puzzle.IsSolved
+        ? new InteractionPrompt(displayName, "Ya resuelto", InteractionPromptStyle.Done)
+        : new InteractionPrompt(displayName, actionText);
 
     public void Interact()
     {

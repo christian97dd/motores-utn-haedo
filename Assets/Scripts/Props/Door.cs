@@ -1,7 +1,10 @@
 using UnityEngine;
 
-public class Door : MonoBehaviour
+public class Door : MonoBehaviour, IInteractable
 {
+    [Header("Leyenda")]
+    [SerializeField] private string displayName = "PUERTA"; // nombre en la leyenda
+
     [Header("Apertura")]
     [SerializeField] private Vector3 openOffset = new Vector3(0f, 3f, 0f); // Desplazamiento desde la posición cerrada
     [SerializeField] private float openSpeed = 3f; // Unidades por segundo
@@ -19,7 +22,16 @@ public class Door : MonoBehaviour
         closedPosition = transform.position;
     }
 
+    public InteractionPrompt Prompt => isLocked
+        ? new InteractionPrompt(displayName, "Bloqueada", InteractionPromptStyle.Locked)
+        : new InteractionPrompt(displayName, isOpen ? "Cerrar" : "Abrir");
+
     // Lo llama el jugador al interactuar
+    public void Interact()
+    {
+        Toggle();
+    }
+
     public void Toggle()
     {
         if (isLocked) return; // TODO: feedback (sonido / texto de pista)
