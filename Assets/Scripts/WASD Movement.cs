@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class WASDMovement : MonoBehaviour
@@ -21,6 +22,12 @@ public class WASDMovement : MonoBehaviour
         Vector3 movement = new Vector3(horizontal, 0f, vertical).normalized;
 
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
+
+       
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            animator.SetTrigger("PickUp");
+        }
 
         
         if (Input.GetKeyDown(KeyCode.C))
