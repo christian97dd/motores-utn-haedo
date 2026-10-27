@@ -6,6 +6,7 @@ public class WASDMovement : MonoBehaviour
     [SerializeField] private float runSpeed = 8f;
 
     private Animator animator;
+    private bool isCrouching = false;
 
     private void Awake()
     {
@@ -19,11 +20,13 @@ public class WASDMovement : MonoBehaviour
 
         Vector3 movement = new Vector3(horizontal, 0f, vertical).normalized;
 
-       
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
 
         
-        bool isCrouching = Input.GetKey(KeyCode.LeftControl);
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            isCrouching = !isCrouching;
+        }
 
         
         float currentSpeed = isRunning ? runSpeed : speed;
