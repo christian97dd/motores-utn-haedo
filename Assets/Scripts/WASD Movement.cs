@@ -1,4 +1,5 @@
 
+
 using UnityEngine;
 
 public class WASDMovement : MonoBehaviour
@@ -23,10 +24,16 @@ public class WASDMovement : MonoBehaviour
 
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
 
-       
+        
         if (Input.GetKeyDown(KeyCode.E))
         {
             animator.SetTrigger("PickUp");
+        }
+
+        
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            animator.SetTrigger("Throw");
         }
 
         
