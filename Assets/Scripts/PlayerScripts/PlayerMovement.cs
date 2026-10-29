@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,13 +13,15 @@ public class Player : MonoBehaviour
     private InputAction playerCrouchAction;
 
     [SerializeField] private Transform playerCamera;
+    [SerializeField] private CinemachineCamera playerCrouchCamera;
+    CinemachineThirdPersonFollow thirdPersonFollow;
     private Vector2 playerMoveAmount;
 
     private Animator playerAnimator;
 
-    private float playerWalkSpeed = 5f;
-    private float playerRunSpeed = 8f;
-    private float playerRotateDampening = 0.1f;
+    private float playerWalkSpeed = 3f;
+    private float playerRunSpeed = 7f;
+    private float playerRotateDampening = 0.25f;
     private float turnSmoothingVelocity;
 
     [SerializeField] private float playerGravity = -9.8f; // la misma que figura en project settings
@@ -31,6 +34,9 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
 
     public bool IsCrouching { get; private set; } // para que otros scripts (EnemyGuard) puedan leer el estado l67
+    public bool IsRunning { get; private set; }
+    public bool IsMoving { get; private set; }
+    public bool Grounded => IsGrounded();
 
     private void OnEnable()
     {
@@ -52,10 +58,18 @@ public class Player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
+    private void Start()
+    {
+        if (playerCrouchCamera != null)
+        {
+            thirdPersonFollow = playerCrouchCamera.GetComponent<CinemachineThirdPersonFollow>();
+        }
+    }
     private void Update()
     {
         playerMoveAmount = playerMoveAction.ReadValue<Vector2>();
         PlayerMoveAndRotate();
+        CrouchingCamera();
     }
 
     private void PlayerMoveAndRotate()
@@ -65,20 +79,31 @@ public class Player : MonoBehaviour
         bool isRunning = playerSprintAction != null && playerSprintAction.IsPressed();
         bool isCrouching = playerCrouchAction != null && playerCrouchAction.IsPressed();
         IsCrouching = isCrouching;
+        IsRunning = isRunning;
+        IsMoving = playerDirection.magnitude >= 0.1f;
 
         Vector3 horizontalMove = Vector3.zero;
 
         if (playerDirection.magnitude >= 0.1f)
         {
-            float targetAngle = Mathf.Atan2(playerDirection.x, playerDirection.z) * Mathf.Rad2Deg + playerCamera.eulerAngles.y;
-            float smoothTargetAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothingVelocity, playerRotateDampening);
-
-            transform.rotation = Quaternion.Euler(0f, smoothTargetAngle, 0f);
-
             float currentSpeed = isRunning ? playerRunSpeed : playerWalkSpeed;
 
-            Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            horizontalMove = moveDirection.normalized * currentSpeed;
+            bool movingBackward = playerMoveAmount.y < -0.1f && Mathf.Abs(playerMoveAmount.x) < 0.1f;
+
+            if (movingBackward)
+            {
+                Vector3 backDir = Quaternion.Euler(0f, playerCamera.eulerAngles.y, 0f) * Vector3.back;
+                horizontalMove = backDir * currentSpeed * 0.6f;
+            }
+            else
+            {
+                float targetAngle = Mathf.Atan2(playerDirection.x, playerDirection.z) * Mathf.Rad2Deg + playerCamera.eulerAngles.y;
+                float smoothTargetAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothingVelocity, playerRotateDampening);
+                transform.rotation = Quaternion.Euler(0f, smoothTargetAngle, 0f);
+
+                Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+                horizontalMove = moveDirection.normalized * currentSpeed;
+            }
         }
 
         ApplyGravity();
@@ -130,4 +155,53 @@ public class Player : MonoBehaviour
         playerAnimator.SetBool("isRunning", isRunning);
         playerAnimator.SetBool("isCrouching", isCrouching);
     }
+
+    private void OnValidate()
+    {
+        if (playerCharacterController == null)
+        {
+            playerCharacterController = GetComponent<CharacterController>();
+        }
+    }
+
+    private void CrouchingCamera()
+    {
+        float targetHeight;
+        Vector3 targetCenter;
+        float targetFOV;
+        float targetShoulderY;
+
+        if (IsCrouching)
+        {
+            targetHeight = 1.0f;
+            targetCenter = new Vector3(0f, 0.5f, 0f); 
+            targetFOV = 40f;                          
+            playerWalkSpeed = 1.25f;
+            targetShoulderY = -0.3f;
+        }
+        else
+        {
+            targetHeight = 1.8f;                      
+            targetCenter = new Vector3(0f, 0.9f, 0f);  
+            targetFOV = 60f;                         
+            playerWalkSpeed = 3f;
+            targetShoulderY = 0.1f;
+        }
+
+        playerCharacterController.height = Mathf.Lerp(playerCharacterController.height, targetHeight, Time.deltaTime * 5f);
+        playerCharacterController.center = Vector3.Lerp(playerCharacterController.center, targetCenter, Time.deltaTime * 5f);
+
+        if (playerCrouchCamera != null)
+        {
+            playerCrouchCamera.Lens.FieldOfView = Mathf.Lerp(playerCrouchCamera.Lens.FieldOfView, targetFOV, Time.deltaTime * 5f);
+        }
+        if (thirdPersonFollow != null)
+        {
+            Vector3 currentOffset = thirdPersonFollow.ShoulderOffset;
+            Vector3 targetOffset = new Vector3(currentOffset.x, targetShoulderY, currentOffset.z);
+            thirdPersonFollow.ShoulderOffset = Vector3.Lerp(currentOffset, targetOffset, Time.deltaTime * 5f);
+        }
+
+    }
+
 }
