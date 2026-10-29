@@ -81,6 +81,7 @@ public class Player : MonoBehaviour
         IsCrouching = isCrouching;
         IsRunning = isRunning;
         IsMoving = playerDirection.magnitude >= 0.1f;
+        bool movingBackward = IsMoving && playerMoveAmount.y < -0.1f && Mathf.Abs(playerMoveAmount.x) < 0.1f;
 
         Vector3 horizontalMove = Vector3.zero;
 
@@ -88,10 +89,12 @@ public class Player : MonoBehaviour
         {
             float currentSpeed = isRunning ? playerRunSpeed : playerWalkSpeed;
 
-            bool movingBackward = playerMoveAmount.y < -0.1f && Mathf.Abs(playerMoveAmount.x) < 0.1f;
-
             if (movingBackward)
             {
+                // retrocede mirando hacia donde apunta la camara, si no la animacion queda de costado
+                float smoothBackAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, playerCamera.eulerAngles.y, ref turnSmoothingVelocity, playerRotateDampening);
+                transform.rotation = Quaternion.Euler(0f, smoothBackAngle, 0f);
+
                 Vector3 backDir = Quaternion.Euler(0f, playerCamera.eulerAngles.y, 0f) * Vector3.back;
                 horizontalMove = backDir * currentSpeed * 0.6f;
             }
@@ -113,7 +116,7 @@ public class Player : MonoBehaviour
         playerCharacterController.Move(finalMove * Time.deltaTime);
 
         // va afuera del if, si no al soltar la tecla se queda en la animacion de caminar
-        UpdatePlayerAnimator(playerDirection.magnitude, isRunning, isCrouching);
+        UpdatePlayerAnimator(playerDirection.magnitude, isRunning, isCrouching, movingBackward);
     }
 
     // el character controller no trae fisica propia, la gravedad se aplica a mano
@@ -147,13 +150,14 @@ public class Player : MonoBehaviour
         Gizmos.DrawWireSphere(GetGroundCheckOrigin(), groundCheckRadius);
     }
 
-    private void UpdatePlayerAnimator(float movement, bool isRunning, bool isCrouching)
+    private void UpdatePlayerAnimator(float movement, bool isRunning, bool isCrouching, bool isMovingBackward)
     {
         if (playerAnimator == null) return;
 
         playerAnimator.SetFloat("movement", movement);
         playerAnimator.SetBool("isRunning", isRunning);
         playerAnimator.SetBool("isCrouching", isCrouching);
+        playerAnimator.SetBool("isMovingBackward", isMovingBackward);
     }
 
     private void OnValidate()
