@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float groundCheckRadius = 0.3f;
     [SerializeField] private LayerMask groundLayer;
 
-    public bool IsCrouching { get; private set; } // para que otros scripts (EnemyGuard) puedan leer el estado l67
+    public bool IsCrouching { get; private set; } // para que otros scripts (PlayerFootstepSound) puedan leer el estado
     public bool IsRunning { get; private set; }
     public bool IsMoving { get; private set; }
     public bool Grounded => IsGrounded();

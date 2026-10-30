@@ -19,6 +19,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float patrolWaitTime = 2f;
     [SerializeField] private float stopAtDistance = 0.5f;
 
+    [Header("Catch")]
+    [SerializeField] private float catchDistance = 1.2f;
+    private bool _caughtPlayer;
+
     [Header("SafeZoneCheck")]
     [SerializeField] private Collider[] safeZones;
     [SerializeField] private LayerMask safeZoneLayer;
@@ -48,6 +52,7 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        CheckCatch();
         CheckVision();
         Patrol();
         UpdateAnimations();
@@ -163,5 +168,17 @@ public class Enemy : MonoBehaviour
         _nextChaseTime = Time.time + chaseUpdateInterval;
 
         Chase(fov.playerRef.transform.position);
+    }
+
+    private void CheckCatch()
+    {
+        if (_caughtPlayer || fov == null || fov.playerRef == null) return;
+
+        float distanceToPlayer = Vector3.Distance(transform.position, fov.playerRef.transform.position);
+        if (distanceToPlayer > catchDistance) return;
+
+        // la escena de derrota se carga recien al final del frame, sin el flag se llamaria varias veces
+        _caughtPlayer = true;
+        GameFlow.Defeat(DefeatCause.Android);
     }
 }
