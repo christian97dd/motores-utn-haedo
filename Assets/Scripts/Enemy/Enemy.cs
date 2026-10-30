@@ -8,7 +8,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float hearingMultiplier = 1f;
 
     [Header("References")]
-    [SerializeField] private Transform[] patrolPoints;
+    [SerializeField] private Transform patrolRoute; // cada hijo es un punto de patrulla
+    private Transform[] _patrolPoints;
 
     [Header("Vision")]
     [SerializeField] private EnemyFOV fov;
@@ -35,7 +36,7 @@ public class Enemy : MonoBehaviour
     private NavMeshAgent _agent;
     private Animator _animator;
     private Coroutine _waitRoutine;
-    private int _currentPatrolIndex;
+    private int _currentPatrolIndex = -1;
     private bool _isWaiting;
 
     private void Awake()
@@ -43,6 +44,9 @@ public class Enemy : MonoBehaviour
         _agent = GetComponent<NavMeshAgent>();
         _animator = GetComponentInChildren<Animator>();
         if (fov == null) fov = GetComponent<EnemyFOV>();
+
+        _patrolPoints = new Transform[patrolRoute != null ? patrolRoute.childCount : 0];
+        for (int i = 0; i < _patrolPoints.Length; i++) _patrolPoints[i] = patrolRoute.GetChild(i);
     }
 
     private void Start()
@@ -72,7 +76,7 @@ public class Enemy : MonoBehaviour
     {
         if (_isWaiting) return;
         if (fov != null && fov.canSeePlayer) return;
-        if (patrolPoints == null || patrolPoints.Length == 0) return;
+        if (_patrolPoints.Length == 0) return;
 
         if (!_agent.pathPending && _agent.hasPath &&
             _agent.remainingDistance <= _agent.stoppingDistance + stopAtDistance)
@@ -97,10 +101,14 @@ public class Enemy : MonoBehaviour
 
     private void GoToNextPatrolPoint()
     {
-        if (patrolPoints == null || patrolPoints.Length == 0) return;
+        if (_patrolPoints.Length == 0) return;
 
-        _agent.SetDestination(patrolPoints[_currentPatrolIndex].position);
-        _currentPatrolIndex = (_currentPatrolIndex + 1) % patrolPoints.Length;
+        // al azar para que no se aprenda el recorrido, pero sin repetir el punto donde ya esta
+        int next = Random.Range(0, _patrolPoints.Length);
+        if (_patrolPoints.Length > 1 && next == _currentPatrolIndex) next = (next + 1) % _patrolPoints.Length;
+
+        _currentPatrolIndex = next;
+        _agent.SetDestination(_patrolPoints[_currentPatrolIndex].position);
     }
 
     private void UpdateAnimations()
