@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
 
     [Header("Catch")]
     [SerializeField] private float catchDistance = 1.2f;
+    [SerializeField] private EnemyJumpScare jumpScare;
     private bool _caughtPlayer;
 
     [Header("SafeZoneCheck")]
@@ -44,6 +45,7 @@ public class Enemy : MonoBehaviour
         _agent = GetComponent<NavMeshAgent>();
         _animator = GetComponentInChildren<Animator>();
         if (fov == null) fov = GetComponent<EnemyFOV>();
+        if (jumpScare == null) jumpScare = GetComponent<EnemyJumpScare>();
 
         _patrolPoints = new Transform[patrolRoute != null ? patrolRoute.childCount : 0];
         for (int i = 0; i < _patrolPoints.Length; i++) _patrolPoints[i] = patrolRoute.GetChild(i);
@@ -56,6 +58,8 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        if (_caughtPlayer) return;
+
         CheckCatch();
         CheckVision();
         Patrol();
@@ -137,6 +141,8 @@ public class Enemy : MonoBehaviour
 
     public void Chase(Vector3 noisePosition)
     {
+        if (_caughtPlayer) return;
+
         if (NavMesh.SamplePosition(noisePosition, out NavMeshHit hit, 2f, NavMesh.AllAreas))
         {
             if (_waitRoutine != null)
@@ -185,8 +191,15 @@ public class Enemy : MonoBehaviour
         float distanceToPlayer = Vector3.Distance(transform.position, fov.playerRef.transform.position);
         if (distanceToPlayer > catchDistance) return;
 
-        // la escena de derrota se carga recien al final del frame, sin el flag se llamaria varias veces
+        // a partir de aca el enemigo queda quieto: ni patrulla ni persigue mientras dura el susto
         _caughtPlayer = true;
-        GameFlow.Defeat(DefeatCause.Android);
+        StopAllCoroutines();
+        _agent.isStopped = true;
+        _agent.velocity = Vector3.zero;
+        _animator.SetBool(RunHash, false);
+        _animator.SetBool(WalkHash, false);
+
+        if (jumpScare != null) jumpScare.Play(fov.playerRef);
+        else GameFlow.Defeat(DefeatCause.Android);
     }
 }
