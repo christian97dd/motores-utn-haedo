@@ -40,6 +40,9 @@ public class Enemy : MonoBehaviour
     private int _currentPatrolIndex = -1;
     private bool _isWaiting;
 
+    // lo lee AudioStateController para pasar la musica a persecucion
+    public bool IsChasing { get; private set; }
+
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
@@ -105,6 +108,7 @@ public class Enemy : MonoBehaviour
 
     private void GoToNextPatrolPoint()
     {
+        IsChasing = false;
         if (_patrolPoints.Length == 0) return;
 
         // al azar para que no se aprenda el recorrido, pero sin repetir el punto donde ya esta
@@ -155,6 +159,7 @@ public class Enemy : MonoBehaviour
             _agent.isStopped = false;
             _agent.SetDestination(hit.position);
             _animator.SetBool(RunHash, true);
+            IsChasing = true;
         }
     }
 
