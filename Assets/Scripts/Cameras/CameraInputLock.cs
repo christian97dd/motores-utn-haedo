@@ -15,6 +15,6 @@ public class CameraInputLock : MonoBehaviour
 
     private void Update()
     {
-        axisController.enabled = !PuzzleWindow.IsAnyOpen && !DocumentWindow.IsOpen;
+        axisController.enabled = !PuzzleWindow.IsAnyOpen && !DocumentWindow.IsOpen && !PlayerWakeUp.IsPlaying;
     }
 }

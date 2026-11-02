@@ -58,8 +58,9 @@ public class PauseMenu : MonoBehaviour
         // con un puzzle o una ficha abierta, Esc la cierra a ella y no abre la pausa
         if (PuzzleWindow.IsAnyOpen || DocumentWindow.IsOpen) return;
 
-        // durante el jump scare tampoco, la derrota se cargaria con el tiempo frenado
-        if (EnemyJumpScare.IsPlaying) return;
+        // durante el jump scare tampoco, la derrota se cargaria con el tiempo frenado,
+        // ni en la intro de la camilla, al reanudar le devolveria los controles antes de pararse
+        if (EnemyJumpScare.IsPlaying || PlayerWakeUp.IsPlaying) return;
 
         if (!IsPaused)
         {
