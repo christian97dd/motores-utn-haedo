@@ -15,17 +15,20 @@ public class OptionsMenu : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioMixer mixer;
     // nombres de los parametros expuestos en MainMixer
-    [SerializeField] private string musicParam = "MyExposedParam 3";
-    [SerializeField] private string sfxParam = "MyExposedParam 2";
-    [SerializeField] private string ambienceParam = "MyExposedParam 1";
+    [SerializeField] private string musicParam = "MusicVolume";
+    [SerializeField] private string sfxParam = "SFXVolume";
+    [SerializeField] private string ambienceParam = "AmbienceVolume";
+    [SerializeField] private string voiceParam = "VoiceVolume";
     [SerializeField] private Slider masterSlider;
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
     [SerializeField] private Slider ambienceSlider;
+    [SerializeField] private Slider voiceSlider;
     [SerializeField] private TMP_Text masterValue;
     [SerializeField] private TMP_Text musicValue;
     [SerializeField] private TMP_Text sfxValue;
     [SerializeField] private TMP_Text ambienceValue;
+    [SerializeField] private TMP_Text voiceValue;
 
     [Header("Video")]
     [SerializeField] private Toggle fullscreenToggle;
@@ -40,6 +43,7 @@ public class OptionsMenu : MonoBehaviour
         musicSlider.onValueChanged.AddListener(value => { GameSettings.Music = value; ApplyAudio(); });
         sfxSlider.onValueChanged.AddListener(value => { GameSettings.Sfx = value; ApplyAudio(); });
         ambienceSlider.onValueChanged.AddListener(value => { GameSettings.Ambience = value; ApplyAudio(); });
+        voiceSlider.onValueChanged.AddListener(value => { GameSettings.Voice = value; ApplyAudio(); });
         fullscreenToggle.onValueChanged.AddListener(value => { GameSettings.Fullscreen = value; Screen.fullScreen = value; });
 
         optionsView.SetActive(false);
@@ -58,6 +62,7 @@ public class OptionsMenu : MonoBehaviour
         musicSlider.SetValueWithoutNotify(GameSettings.Music);
         sfxSlider.SetValueWithoutNotify(GameSettings.Sfx);
         ambienceSlider.SetValueWithoutNotify(GameSettings.Ambience);
+        voiceSlider.SetValueWithoutNotify(GameSettings.Voice);
         fullscreenToggle.SetIsOnWithoutNotify(GameSettings.Fullscreen);
         UpdateLabels();
 
@@ -85,6 +90,7 @@ public class OptionsMenu : MonoBehaviour
             mixer.SetFloat(musicParam, ToDecibels(GameSettings.Music));
             mixer.SetFloat(sfxParam, ToDecibels(GameSettings.Sfx));
             mixer.SetFloat(ambienceParam, ToDecibels(GameSettings.Ambience));
+            mixer.SetFloat(voiceParam, ToDecibels(GameSettings.Voice));
         }
 
         UpdateLabels();
@@ -96,6 +102,7 @@ public class OptionsMenu : MonoBehaviour
         musicValue.text = ToPercent(GameSettings.Music);
         sfxValue.text = ToPercent(GameSettings.Sfx);
         ambienceValue.text = ToPercent(GameSettings.Ambience);
+        voiceValue.text = ToPercent(GameSettings.Voice);
     }
 
     // el slider va de 0 a 1 pero el mixer trabaja en decibeles

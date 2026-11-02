@@ -33,6 +33,7 @@ public class PuzzleWindow : MonoBehaviour
     [SerializeField] private TMP_Text messageLabel;
     [SerializeField] private TMP_Text terminalLabel;
     [SerializeField] private TMP_Text hintLabel;
+    [SerializeField] private TMP_Text footerLabel;
 
     [Header("Colores")]
     [SerializeField] private Color normalColor = new Color(0.47f, 0.78f, 0.88f);
@@ -93,6 +94,7 @@ public class PuzzleWindow : MonoBehaviour
         subtitleLabel.text = puzzle.Subtitle;
         terminalLabel.text = puzzle.TerminalLabel;
         hintLabel.text = puzzle.Hint;
+        footerLabel.text = currentView.Controls;
         panel.sizeDelta = currentView.PanelSize;
 
         puzzle.onSolved.AddListener(HandleSolved);
@@ -173,6 +175,11 @@ public class PuzzleWindow : MonoBehaviour
         SetState(PuzzleState.Solved);
         yield return new WaitForSecondsRealtime(solvedCloseDelay);
         Close();
+    }
+
+    public void RefreshMessage()
+    {
+        if (currentView != null && State == PuzzleState.Normal) messageLabel.text = currentView.Instructions;
     }
 
     private void SetState(PuzzleState state)
