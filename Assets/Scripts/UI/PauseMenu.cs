@@ -49,7 +49,7 @@ public class PauseMenu : MonoBehaviour
         float target = IsPaused ? 1f : 0f;
         pauseVolume.weight = Mathf.MoveTowards(pauseVolume.weight, target, volumeFadeSpeed * Time.unscaledDeltaTime);
 
-        // la camara del nivel tiene el post-processing apagado, se prende solo mientras dura la pausa
+        // si la camara del nivel tenia el post-processing apagado, vuelve a apagarse al terminar la pausa
         if (!IsPaused && pauseVolume.weight <= 0f) SetCameraPostProcessing(cameraHadPostProcessing);
     }
 
