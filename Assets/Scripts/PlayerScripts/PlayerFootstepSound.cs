@@ -17,8 +17,6 @@ public class PlayerFootstepSound : MonoBehaviour
     [SerializeField] private float runVolume = 1f;
     [SerializeField] private float crouchVolume = 0.25f;
 
-    public static event Action<Vector3, float> OnNoiseEmitted;
-
     [Header("Radio del ruido")]
     [SerializeField] private float walkNoiseRadius = 6f;
     [SerializeField] private float runNoiseRadius = 12f;
@@ -84,7 +82,7 @@ public class PlayerFootstepSound : MonoBehaviour
     {
         lastNoiseRadius = radius;
         lastNoiseTime = Time.time;
-        OnNoiseEmitted?.Invoke(transform.position, radius);
+        Noise.Emit(transform.position, radius);
         Debug.Log($"Ruido emitido, radio {radius}");
     }
 

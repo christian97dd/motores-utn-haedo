@@ -125,11 +125,11 @@ public class Enemy : MonoBehaviour
         _animator.SetBool(WalkHash, isMoving);
     }
 
-    private void OnEnable() => PlayerFootstepSound.OnNoiseEmitted += HearNoise;
+    private void OnEnable() => Noise.Emitted += HearNoise;
 
     private void OnDisable()
     {
-        PlayerFootstepSound.OnNoiseEmitted -= HearNoise;
+        Noise.Emitted -= HearNoise;
         _isWaiting = false;
         _waitRoutine = null;
     }
