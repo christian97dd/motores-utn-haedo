@@ -65,6 +65,9 @@ public class PlayerWakeUp : MonoBehaviour
         wakeUpCamera.gameObject.SetActive(true);
         wakeUpCamera.Prioritize();
 
+        // el relato corre con el mundo congelado y la pantalla en negro; se levanta recien al terminar
+        while (IntroNarration.IsPlaying) yield return null;
+
         yield return new WaitForSeconds(lyingTime);
 
         animator.CrossFadeInFixedTime(getUpState, crossFadeTime, 0, 0f);
