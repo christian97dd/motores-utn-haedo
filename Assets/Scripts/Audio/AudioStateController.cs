@@ -29,6 +29,7 @@ public class AudioStateController : MonoBehaviour
     [Header("Capas de musica")]
     [SerializeField] private AudioSource calmLayer;
     [SerializeField] private AudioSource tensionLayer;
+    [SerializeField] private AudioSource chaseLayer; // pista aparte, no va a tiempo con las otras dos
 
     [Header("Referencias")]
     [SerializeField] private PauseMenu pauseMenu;
@@ -37,6 +38,7 @@ public class AudioStateController : MonoBehaviour
 
     private Enemy[] enemies;
     private SecurityCameraDetection[] cameras;
+    private bool layersStarted;
 
     private void Start()
     {
@@ -44,14 +46,16 @@ public class AudioStateController : MonoBehaviour
         cameras = FindObjectsByType<SecurityCameraDetection>(FindObjectsSortMode.None);
         if (pauseMenu == null) pauseMenu = FindFirstObjectByType<PauseMenu>();
 
-        PlayLayersInSync();
-
         State = AudioState.Exploration;
         exploration.TransitionTo(0f);
     }
 
     private void Update()
     {
+        // durante el relato del principio solo se escucha la voz
+        if (IntroNarration.IsPlaying) return;
+        if (!layersStarted) PlayLayersInSync();
+
         AudioState next = ReadState();
         if (next == State) return;
 
@@ -99,17 +103,21 @@ public class AudioStateController : MonoBehaviour
         }
     }
 
-    // las dos capas suenan siempre y los snapshots solo cambian cual se escucha,
+    // las capas suenan siempre y los snapshots solo cambian cual se escucha,
     // por eso tienen que arrancar en el mismo instante para quedar a tiempo
     private void PlayLayersInSync()
     {
-        // la pausa frena todo el audio con AudioListener.pause, la musica sigue sonando
-        // apagada por el low-pass. Va por codigo porque Unity no guarda esta opcion en la escena
-        if (calmLayer != null) calmLayer.ignoreListenerPause = true;
-        if (tensionLayer != null) tensionLayer.ignoreListenerPause = true;
-
+        layersStarted = true;
         double startTime = AudioSettings.dspTime + 0.1;
-        if (calmLayer != null && calmLayer.clip != null) calmLayer.PlayScheduled(startTime);
-        if (tensionLayer != null && tensionLayer.clip != null) tensionLayer.PlayScheduled(startTime);
+
+        foreach (AudioSource layer in new[] { calmLayer, tensionLayer, chaseLayer })
+        {
+            if (layer == null) continue;
+
+            // la pausa frena todo el audio con AudioListener.pause, la musica sigue sonando
+            // apagada por el low-pass. Va por codigo porque Unity no guarda esta opcion en la escena
+            layer.ignoreListenerPause = true;
+            if (layer.clip != null) layer.PlayScheduled(startTime);
+        }
     }
 }
