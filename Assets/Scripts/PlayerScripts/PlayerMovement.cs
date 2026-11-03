@@ -77,8 +77,9 @@ public class Player : MonoBehaviour
         Vector3 playerDirection = new Vector3(playerMoveAmount.x, 0f, playerMoveAmount.y).normalized;
 
         bool isRunning = playerSprintAction != null && playerSprintAction.IsPressed();
-        bool isCrouching = playerCrouchAction != null && playerCrouchAction.IsPressed();
-        IsCrouching = isCrouching;
+        // la C alterna: queda agachado hasta volver a apretarla
+        if (playerCrouchAction != null && playerCrouchAction.WasPressedThisFrame()) IsCrouching = !IsCrouching;
+        bool isCrouching = IsCrouching;
         IsRunning = isRunning;
         IsMoving = playerDirection.magnitude >= 0.1f;
         bool movingBackward = IsMoving && playerMoveAmount.y < -0.1f && Mathf.Abs(playerMoveAmount.x) < 0.1f;

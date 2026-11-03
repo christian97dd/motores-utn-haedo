@@ -49,7 +49,7 @@ public class PauseMenu : MonoBehaviour
         float target = IsPaused ? 1f : 0f;
         pauseVolume.weight = Mathf.MoveTowards(pauseVolume.weight, target, volumeFadeSpeed * Time.unscaledDeltaTime);
 
-        // la camara del nivel tiene el post-processing apagado, se prende solo mientras dura la pausa
+        // si la camara del nivel tenia el post-processing apagado, vuelve a apagarse al terminar la pausa
         if (!IsPaused && pauseVolume.weight <= 0f) SetCameraPostProcessing(cameraHadPostProcessing);
     }
 
@@ -58,8 +58,9 @@ public class PauseMenu : MonoBehaviour
         // con un puzzle o una ficha abierta, Esc la cierra a ella y no abre la pausa
         if (PuzzleWindow.IsAnyOpen || DocumentWindow.IsOpen) return;
 
-        // durante el jump scare tampoco, la derrota se cargaria con el tiempo frenado
-        if (EnemyJumpScare.IsPlaying) return;
+        // durante el jump scare tampoco, la derrota se cargaria con el tiempo frenado,
+        // ni en la intro de la camilla, al reanudar le devolveria los controles antes de pararse
+        if (EnemyJumpScare.IsPlaying || PlayerWakeUp.IsPlaying) return;
 
         if (!IsPaused)
         {
