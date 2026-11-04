@@ -718,8 +718,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFootstepSound
   agent: {fileID: 2281894528678107525}
+  animator: {fileID: 0}
   audioSource: {fileID: 6025700305303437558}
-  steps:
+  walkSteps:
     clips:
     - {fileID: 8300000, guid: 62954249d1e634bcd837553fe0317e64, type: 3}
     - {fileID: 8300000, guid: 01c0b0c6f4c6b4782a8671ff562b48ae, type: 3}
@@ -730,9 +731,28 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 15b29602403d241eb997826d616edbfd, type: 3}
     - {fileID: 8300000, guid: 739d1cc819dbb4d008eaec0fb0cadd4b, type: 3}
     - {fileID: 8300000, guid: 49c6ff6be0e7c45a28236f355400b4d3, type: 3}
-    pitchRange: {x: 0.94, y: 1.06}
-    volumeRange: {x: 0.85, y: 1}
-  strideLength: 1.2
+    pitchRange: {x: 0.9, y: 0.98}
+    volumeRange: {x: 0.55, y: 0.7}
+  runSteps:
+    clips:
+    - {fileID: 8300000, guid: 62954249d1e634bcd837553fe0317e64, type: 3}
+    - {fileID: 8300000, guid: 01c0b0c6f4c6b4782a8671ff562b48ae, type: 3}
+    - {fileID: 8300000, guid: ec863e11913c04c7ab7df57ec0395e0d, type: 3}
+    - {fileID: 8300000, guid: ea7b81b0f6a5842a1a53fc1e690b7e84, type: 3}
+    - {fileID: 8300000, guid: 374f44442e32848e98629e8b856ab763, type: 3}
+    - {fileID: 8300000, guid: afa509ccc72064da2a3730bd7521ea3e, type: 3}
+    - {fileID: 8300000, guid: 15b29602403d241eb997826d616edbfd, type: 3}
+    - {fileID: 8300000, guid: 739d1cc819dbb4d008eaec0fb0cadd4b, type: 3}
+    - {fileID: 8300000, guid: 49c6ff6be0e7c45a28236f355400b4d3, type: 3}
+    pitchRange: {x: 1.02, y: 1.1}
+    volumeRange: {x: 0.9, y: 1}
+  walkContacts:
+  - 0.38
+  - 0.9
+  runContacts:
+  - 0.33
+  - 0.9
+  runParameter: run
   minSpeed: 0.2
 --- !u!1 &8678188153852512616
 GameObject:
