@@ -15,11 +15,16 @@ public class Door : MonoBehaviour, IInteractable
     [Header("Testeo de estados")]
     [SerializeField] private bool isOpen = false;
 
+    [Header("Sonido")]
+    [SerializeField] private AudioSource audioSource; // 3D en la puerta, sale por el grupo SFX
+    [SerializeField] private SoundVariation moveSound;
+
     private Vector3 closedPosition;
 
     private void Awake()
     {
         closedPosition = transform.position;
+        if (audioSource == null) audioSource = GetComponent<AudioSource>();
     }
 
     public InteractionPrompt Prompt => isLocked
@@ -37,6 +42,7 @@ public class Door : MonoBehaviour, IInteractable
         if (isLocked) return; // TODO: feedback (sonido / texto de pista)
 
         isOpen = !isOpen;
+        moveSound.Play(audioSource);
     }
 
     // Lo llama el puzzle al resolverse
@@ -48,7 +54,10 @@ public class Door : MonoBehaviour, IInteractable
     // Abre la puerta sin alternar (no la cierra si ya estaba abierta)
     public void Open()
     {
+        if (isOpen) return;
+
         isOpen = true;
+        moveSound.Play(audioSource);
     }
 
     private void Update()

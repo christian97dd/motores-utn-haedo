@@ -5,7 +5,11 @@ public class PlayerFootstepSound : MonoBehaviour
 {
     [SerializeField] private Player player;
     [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip[] footstepClips;
+
+    [Header("Pasos por estado")]
+    [SerializeField] private SoundVariation walkSteps;
+    [SerializeField] private SoundVariation runSteps;
+    [SerializeField] private SoundVariation crouchSteps;
 
     [Header("Intervalo entre pasos (segundos)")]
     [SerializeField] private float walkInterval = 0.5f;
@@ -16,8 +20,6 @@ public class PlayerFootstepSound : MonoBehaviour
     [SerializeField] private float walkVolume = 0.6f;
     [SerializeField] private float runVolume = 1f;
     [SerializeField] private float crouchVolume = 0.25f;
-
-    public static event Action<Vector3, float> OnNoiseEmitted;
 
     [Header("Radio del ruido")]
     [SerializeField] private float walkNoiseRadius = 6f;
@@ -49,42 +51,37 @@ public class PlayerFootstepSound : MonoBehaviour
         float interval = walkInterval;
         float volume = walkVolume;
         float noiseRadius = walkNoiseRadius;
+        SoundVariation steps = walkSteps;
 
         if (player.IsCrouching)
         {
             interval = crouchInterval;
             volume = crouchVolume;
             noiseRadius = crouchNoiseRadius;
+            steps = crouchSteps;
         }
         else if (player.IsRunning)
         {
             interval = runInterval;
             volume = runVolume;
             noiseRadius = runNoiseRadius;
+            steps = runSteps;
         }
 
         stepTimer -= Time.deltaTime;
         if (stepTimer <= 0f)
         {
-            PlayStep(volume);
+            steps.Play(audioSource, volume);
             EmitNoise(noiseRadius);
             stepTimer = interval;
         }
     }
 
-    private void PlayStep(float volume)
-    {
-        if (footstepClips.Length == 0) return;
-
-        AudioClip clip = footstepClips[UnityEngine.Random.Range(0, footstepClips.Length)];
-        audioSource.pitch = UnityEngine.Random.Range(0.95f, 1.05f);
-        audioSource.PlayOneShot(clip, volume);
-    }
     private void EmitNoise(float radius)
     {
         lastNoiseRadius = radius;
         lastNoiseTime = Time.time;
-        OnNoiseEmitted?.Invoke(transform.position, radius);
+        Noise.Emit(transform.position, radius);
         Debug.Log($"Ruido emitido, radio {radius}");
     }
 
