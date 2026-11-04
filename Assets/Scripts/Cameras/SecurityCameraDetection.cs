@@ -65,9 +65,9 @@ public class SecurityCameraDetection : MonoBehaviour
     [SerializeField] private SphereCollider noiseCollider;
  
     [Header("Llamar al enemigo")]
-    [Tooltip("Si está activo, la cámara llama directamente a los Enemy cercanos (Enemy.Chase) hacia su zona.")]
+    [Tooltip("Si está activo, la cámara llama directamente a todos los Enemy (Enemy.Chase) hacia su zona, sin importar la distancia.")]
     [SerializeField] private bool callEnemies = true;
-    [Tooltip("Radio en el que los enemigos 'escuchan' la alarma (también el radio del collider de ruido).")]
+    [Tooltip("Radio del collider de ruido mientras suena la alarma.")]
     [SerializeField] private float noiseRadius = 30f;
     [Tooltip("Punto al que va el enemigo. Ponelo en el piso debajo de la cámara (sobre el NavMesh). Si está vacío usa la posición de la cámara.")]
     [SerializeField] private Transform enemyDestination;
@@ -287,8 +287,8 @@ public class SecurityCameraDetection : MonoBehaviour
  
         foreach (Enemy enemy in enemies)
         {
+            // la alarma se escucha en todo el laboratorio: vienen todos, esten donde esten
             if (enemy == null || !enemy.isActiveAndEnabled) continue;
-            if (Vector3.Distance(enemy.transform.position, transform.position) > noiseRadius) continue;
  
             enemy.Chase(navHit.position);
         }
