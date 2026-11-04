@@ -42,6 +42,14 @@ public class PlayerWakeUp : MonoBehaviour
     {
         animator = player.GetComponentInChildren<Animator>();
         characterController = player.GetComponent<CharacterController>();
+
+        // al reaparecer desde un checkpoint no se repite la intro de la camilla
+        if (Checkpoint.HasCheckpoint)
+        {
+            wakeUpCamera.gameObject.SetActive(false);
+            return;
+        }
+
         StartCoroutine(WakeUpRoutine());
     }
 
