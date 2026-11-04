@@ -19,6 +19,7 @@ public static class GameFlow
 
     public static void Victory()
     {
+        Checkpoint.Clear(); // la partida termino: la proxima arranca de cero
         SceneManager.LoadScene(VictoryScene);
     }
 

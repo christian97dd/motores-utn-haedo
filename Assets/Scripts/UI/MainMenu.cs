@@ -20,6 +20,7 @@ public class MainMenu : MonoBehaviour
     {
         if (loading) return;
         loading = true;
+        Checkpoint.Clear(); // desde el menu siempre es partida nueva
         StartCoroutine(LoadGameRoutine());
     }
 

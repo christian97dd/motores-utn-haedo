@@ -33,9 +33,9 @@ MonoBehaviour:
     value: "HIDE \xB7 salidas cerradas"
     style: 0
   noteAuthor: MENSAJE SIN FIRMA
-  noteBody: "Si est\xE1s leyendo esto, sos el 42. No sos una unidad: te sacaron de
-    tu casa hace once d\xEDas. HIDE le cort\xF3 la energ\xEDa a la salida para que
-    no puedas irte. Reorient\xE1 el circuito desde el panel de la puerta y no mires
-    a las c\xE1maras."
-  clueText: Reorientar el circuito de la salida
-  codeSource: {fileID: 0}
+  noteBody: "Si est\xE1s leyendo esto, sos el 42. HIDE esta esperando que te equivoques
+    cuando ingresas el codigo de la siguiente puerta no le erres porque vas a llamar
+    al androide. Anot\xE9 el acceso de la puerta B-4: {codigo} ahi encontras el codigo
+    de la puerta de salida. Usalo antes de que te encuentren."
+  clueText: Encontra la pista final
+  codeSource: {fileID: 11400000, guid: ec05aebf0c695164b8c0d9f0eb2216d4, type: 2}

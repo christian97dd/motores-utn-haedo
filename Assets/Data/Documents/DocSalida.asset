@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7734f3326e1b04bd4a8610eee03ffbc6, type: 3}
+  m_Name: DocSalida
+  m_EditorClassIdentifier: Assembly-CSharp::DocumentData
+  title: CONFIDENCIAL
+  subtitle: 
+  terminalLabel: ' '
+  headline: 
+  stamp: 
+  photo: {fileID: 21300000, guid: 905f25ba659f4426b899ca0cdd5de494, type: 3}
+  photoCaption: 
+  fields: []
+  noteAuthor: NOTA ANONIMA
+  noteBody: "\xDAltima puerta. Mi llave es mi n\xFAmero: {codigo}. Sin pantalla que
+    te ayude: sum\xE1 de memoria. Si fall\xE1s, HIDE lo oye.\nACORDATE    128\t64\t32\t16\t8\t4\t2\t1"
+  clueText: "C\xF3digo de la puerta de salida"
+  codeSource: {fileID: 11400000, guid: 315760ae882339444ad5ac9c572d6220, type: 2}

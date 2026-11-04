@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7734f3326e1b04bd4a8610eee03ffbc6, type: 3}
+  m_Name: DocConsolaZonaD
+  m_EditorClassIdentifier: Assembly-CSharp::DocumentData
+  title: FICHA DE SUJETO
+  subtitle: "PROYECTO DE TRANSFORMACI\xD3N // ACCESO NIVEL 3"
+  terminalLabel: "> ARCHIVO M\xC9DICO \xB7 LABORATORIO D"
+  headline: "SUJETO N.\xBA {codigo}"
+  stamp: CONFIDENCIAL
+  photo: {fileID: 21300000, guid: 905f25ba659f4426b899ca0cdd5de494, type: 3}
+  photoCaption: 
+  fields: []
+  noteAuthor: "NOTA DEL DR. V\xC1LEK"
+  noteBody: "El {codigo} fue el \xFAltimo en pasar la fase 4. Cambi\xE9 el acceso
+    de la puerta B-3 a su n\xFAmero. Si llegaste hasta ac\xE1, el androide ya sabe
+    que est\xE1s adentro."
+  clueText: "C\xF3digo de la puerta B-3"
+  codeSource: {fileID: 11400000, guid: f90ed77125766c5418fe620b4766f7c0, type: 2}

@@ -49,7 +49,8 @@ public class IntroNarration : MonoBehaviour
 
     private void Awake()
     {
-        IsPlaying = voice != null && voice.clip != null;
+        // al reaparecer desde un checkpoint no se repite el relato
+        IsPlaying = !Checkpoint.HasCheckpoint && voice != null && voice.clip != null;
         screen.gameObject.SetActive(IsPlaying);
     }
 
