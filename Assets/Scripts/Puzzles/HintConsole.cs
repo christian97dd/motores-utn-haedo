@@ -6,6 +6,7 @@ public class HintConsole : MonoBehaviour, IInteractable
 {
     [Header("Energia")]
     [SerializeField] private Puzzle powerPuzzle;      // el puzzle de cables que la enciende
+    public Puzzle PowerPuzzle => powerPuzzle;
 
     [Header("Pista")]
     [SerializeField] private DocumentData document;   // la ficha que se lee con energia

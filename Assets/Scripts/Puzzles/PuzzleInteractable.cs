@@ -4,6 +4,7 @@ using UnityEngine;
 public class PuzzleInteractable : MonoBehaviour, IInteractable
 {
     [SerializeField] private Puzzle puzzle;
+    public Puzzle Puzzle => puzzle;
 
     [Header("Leyenda")]
     [SerializeField] private string displayName = "PANEL DE ACCESO";

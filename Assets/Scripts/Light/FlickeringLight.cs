@@ -14,6 +14,9 @@ public class HorrorFlicker : MonoBehaviour
     [SerializeField] private float minFlickerTime = 0.04f;
     [SerializeField] private float maxFlickerTime = 0.15f;
 
+    // avisa cuando arranca una tanda de cortes, para las chispas
+    public event System.Action FlickeredOff;
+
     private void Start()
     {
         if (targetLight == null)
@@ -35,6 +38,7 @@ public class HorrorFlicker : MonoBehaviour
 
             // Número aleatorio de fallos
             int flickers = Random.Range(2, 6);
+            FlickeredOff?.Invoke();
 
             for (int i = 0; i < flickers; i++)
             {
