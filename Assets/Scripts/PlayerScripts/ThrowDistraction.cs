@@ -35,6 +35,7 @@ public class ThrowDistraction : MonoBehaviour
     // el personaje se corre a la izquierda de la pantalla y la camara mira a su derecha, asi no tapa
     // donde cae. Se mueve el encuadre y no la camara, que en los pasillos chocaria con las paredes
     [SerializeField] private float aimScreenX = -0.2f;
+    [SerializeField] private float normalScreenX = -0.2f; // encuadre sin apuntar; 0 deja al personaje centrado
     [SerializeField] private float aimBlendSpeed = 1.5f;
 
     private InputAction throwAction;
@@ -212,7 +213,7 @@ public class ThrowDistraction : MonoBehaviour
         if (aimComposer == null) return;
 
         ScreenComposerSettings composition = aimComposer.Composition;
-        float target = IsAiming ? aimScreenX : 0f;
+        float target = IsAiming ? aimScreenX : normalScreenX;
         composition.ScreenPosition.x = Mathf.MoveTowards(composition.ScreenPosition.x, target, aimBlendSpeed * Time.deltaTime);
         aimComposer.Composition = composition;
     }

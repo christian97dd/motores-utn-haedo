@@ -14,7 +14,13 @@ public class Player : MonoBehaviour
 
     [SerializeField] private Transform playerCamera;
     [SerializeField] private CinemachineCamera playerCrouchCamera;
+    [SerializeField] private float crouchCameraDrop = 1f; // cuanto baja el punto que sigue la camara al agacharse (negativo la sube)
+    [SerializeField] private float crouchScreenY = 0f;     // inclinacion de la camara agachado: negativo mira mas abajo, positivo mas arriba
+    [SerializeField] private float crouchLookOffset = -0.4f; // agachado: cuanto baja el punto al que mira la camara, sin moverla
     CinemachineThirdPersonFollow thirdPersonFollow;
+    private Transform cameraTarget;
+    private float cameraTargetHeight;
+    private CinemachineRotationComposer cameraComposer;
     private Vector2 playerMoveAmount;
 
     private Animator playerAnimator;
@@ -63,6 +69,9 @@ public class Player : MonoBehaviour
         if (playerCrouchCamera != null)
         {
             thirdPersonFollow = playerCrouchCamera.GetComponent<CinemachineThirdPersonFollow>();
+            cameraTarget = playerCrouchCamera.Target.TrackingTarget;
+            if (cameraTarget != null) cameraTargetHeight = cameraTarget.localPosition.y;
+            cameraComposer = playerCrouchCamera.GetComponent<CinemachineRotationComposer>();
         }
     }
     private void Update()
@@ -76,10 +85,11 @@ public class Player : MonoBehaviour
     {
         Vector3 playerDirection = new Vector3(playerMoveAmount.x, 0f, playerMoveAmount.y).normalized;
 
-        bool isRunning = playerSprintAction != null && playerSprintAction.IsPressed();
         // la C alterna: queda agachado hasta volver a apretarla
         if (playerCrouchAction != null && playerCrouchAction.WasPressedThisFrame()) IsCrouching = !IsCrouching;
         bool isCrouching = IsCrouching;
+        // agachado no se puede correr: el Shift no hace nada hasta levantarse
+        bool isRunning = !isCrouching && playerSprintAction != null && playerSprintAction.IsPressed();
         IsRunning = isRunning;
         IsMoving = playerDirection.magnitude >= 0.1f;
         bool movingBackward = IsMoving && playerMoveAmount.y < -0.1f && Mathf.Abs(playerMoveAmount.x) < 0.1f;
@@ -181,14 +191,14 @@ public class Player : MonoBehaviour
             targetHeight = 1.0f;
             targetCenter = new Vector3(0f, 0.5f, 0f); 
             targetFOV = 40f;                          
-            playerWalkSpeed = 1.25f;
+            playerWalkSpeed = 1.75f;
             targetShoulderY = -0.3f;
         }
         else
         {
             targetHeight = 1.8f;                      
             targetCenter = new Vector3(0f, 0.9f, 0f);  
-            targetFOV = 60f;                         
+            targetFOV = 40f;                         
             playerWalkSpeed = 3f;
             targetShoulderY = 0.1f;
         }
@@ -199,6 +209,27 @@ public class Player : MonoBehaviour
         if (playerCrouchCamera != null)
         {
             playerCrouchCamera.Lens.FieldOfView = Mathf.Lerp(playerCrouchCamera.Lens.FieldOfView, targetFOV, Time.deltaTime * 5f);
+        }
+        // agachado el cuerpo queda abajo del cuadro: el punto que sigue la camara baja con el
+        if (cameraTarget != null)
+        {
+            Vector3 targetPosition = cameraTarget.localPosition;
+            float height = IsCrouching ? cameraTargetHeight - crouchCameraDrop : cameraTargetHeight;
+            targetPosition.y = Mathf.Lerp(targetPosition.y, height, Time.deltaTime * 5f);
+            cameraTarget.localPosition = targetPosition;
+        }
+        // bajar mas el punto acerca la camara al piso y los muebles la empujan contra el personaje,
+        // por eso el resto se resuelve inclinando la camara
+        if (cameraComposer != null)
+        {
+            ScreenComposerSettings composition = cameraComposer.Composition;
+            composition.ScreenPosition.y = Mathf.Lerp(composition.ScreenPosition.y, IsCrouching ? crouchScreenY : 0f, Time.deltaTime * 5f);
+            cameraComposer.Composition = composition;
+
+            // con la camara alta, mirar al punto que sigue deja el cuerpo abajo del cuadro: se mira mas abajo
+            Vector3 lookOffset = cameraComposer.TargetOffset;
+            lookOffset.y = Mathf.Lerp(lookOffset.y, IsCrouching ? -crouchLookOffset : 0f, Time.deltaTime * 5f);
+            cameraComposer.TargetOffset = lookOffset;
         }
         if (thirdPersonFollow != null)
         {
