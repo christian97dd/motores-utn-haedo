@@ -25,6 +25,16 @@ public class DocumentInteractable : MonoBehaviour, IInteractable
         DocumentWindow.Current.Open(document);
 
         if (objectToActivate != null && DocumentWindow.IsOpen)
+        {
             objectToActivate.SetActive(true);
+            DocumentWindow.Current.Closed += StopVoice;
+        }
+    }
+
+    // la voz dura lo que la ficha abierta, asi al volver a abrirla arranca de nuevo
+    private void StopVoice()
+    {
+        DocumentWindow.Current.Closed -= StopVoice;
+        objectToActivate.SetActive(false);
     }
 }

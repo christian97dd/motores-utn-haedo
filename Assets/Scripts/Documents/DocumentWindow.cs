@@ -13,6 +13,9 @@ public class DocumentWindow : MonoBehaviour
     // lo usa la pausa para no abrirse con el mismo Esc
     public static bool IsOpen { get; private set; }
 
+    // avisa al cerrar la ficha, para cortar la voz de la terminal
+    public event System.Action Closed;
+
     [Header("Partes de la ventana")]
     [SerializeField] private GameObject windowRoot;
     [SerializeField] private TMP_Text titleLabel;
@@ -101,6 +104,7 @@ public class DocumentWindow : MonoBehaviour
         windowRoot.SetActive(false);
         IsOpen = false;
         closedFrame = Time.frameCount;
+        Closed?.Invoke();
     }
 
     private void OnClose(InputAction.CallbackContext context)
