@@ -9,6 +9,9 @@ public class DocumentInteractable : MonoBehaviour, IInteractable
     [SerializeField] private string displayName = "TERMINAL";
     [SerializeField] private string actionText = "Leer ficha";
 
+    [Header("Voz")]
+    [SerializeField] private GameObject objectToActivate;
+
     public InteractionPrompt Prompt => new InteractionPrompt(displayName, actionText);
 
     public void Interact()
@@ -20,5 +23,8 @@ public class DocumentInteractable : MonoBehaviour, IInteractable
         }
 
         DocumentWindow.Current.Open(document);
+
+        if (objectToActivate != null && DocumentWindow.IsOpen)
+            objectToActivate.SetActive(true);
     }
 }

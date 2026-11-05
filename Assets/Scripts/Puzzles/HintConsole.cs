@@ -18,6 +18,9 @@ public class HintConsole : MonoBehaviour, IInteractable
     [SerializeField] private string unpoweredText = "Sin energía";
     [SerializeField] private string poweredText = "Leer archivo";
 
+    [Header("Voz")]
+    [SerializeField] private GameObject objectToActivate;
+
     private bool IsPowered => powerPuzzle != null && powerPuzzle.IsSolved;
 
     public InteractionPrompt Prompt => IsPowered
@@ -53,6 +56,8 @@ public class HintConsole : MonoBehaviour, IInteractable
         }
 
         DocumentWindow.Current.Open(document);
+                if (objectToActivate != null && DocumentWindow.IsOpen)
+                    objectToActivate.SetActive(true);
     }
 
     private void UpdateScreen()

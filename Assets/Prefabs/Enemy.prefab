@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 1154294081984237476}
   - component: {fileID: 3272092875985402064}
   m_Layer: 0
-  m_Name: EnemigoPrueba (Final)
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
