@@ -38,8 +38,13 @@ public class ThrowDistraction : MonoBehaviour
     [SerializeField] private float normalScreenX = -0.2f; // encuadre sin apuntar; 0 deja al personaje centrado
     [SerializeField] private float aimBlendSpeed = 1.5f;
 
+    [Header("Animacion")]
+    [SerializeField] private string pickUpTrigger = "PickUp";
+    [SerializeField] private string throwTrigger = "Throw";
+
     private InputAction throwAction;
     private InputAction cancelAction;
+    private Animator animator;
     private Collider playerCollider;
     private Transform cameraTransform;
     private readonly List<Vector3> path = new List<Vector3>();
@@ -50,6 +55,7 @@ public class ThrowDistraction : MonoBehaviour
         throwAction = InputSystem.actions.FindAction("Attack");
         cancelAction = InputSystem.actions.FindAction("CancelThrow");
         playerCollider = GetComponent<Collider>();
+        animator = GetComponentInChildren<Animator>();
         ShowTrajectory(false);
     }
 
@@ -106,6 +112,7 @@ public class ThrowDistraction : MonoBehaviour
         if (HasDistraction) return false;
 
         HasDistraction = true;
+        if (animator != null) animator.SetTrigger(pickUpTrigger);
         Changed?.Invoke();
         return true;
     }
@@ -116,6 +123,7 @@ public class ThrowDistraction : MonoBehaviour
 
         GameObject thrown = Instantiate(distractionPrefab, origin, Quaternion.LookRotation(velocity));
         IgnorePlayerCollision(thrown);
+        if (animator != null) animator.SetTrigger(throwTrigger);
 
         // misma velocidad que la simulada, asi cae donde marcaba la linea
         if (thrown.TryGetComponent(out Rigidbody body))
