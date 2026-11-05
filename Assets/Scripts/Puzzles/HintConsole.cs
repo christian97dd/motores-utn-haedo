@@ -18,6 +18,9 @@ public class HintConsole : MonoBehaviour, IInteractable
     [SerializeField] private string unpoweredText = "Sin energía";
     [SerializeField] private string poweredText = "Leer archivo";
 
+    [Header("Voz")]
+    [SerializeField] private GameObject objectToActivate;
+
     private bool IsPowered => powerPuzzle != null && powerPuzzle.IsSolved;
 
     public InteractionPrompt Prompt => IsPowered
@@ -53,6 +56,19 @@ public class HintConsole : MonoBehaviour, IInteractable
         }
 
         DocumentWindow.Current.Open(document);
+
+        if (objectToActivate != null && DocumentWindow.IsOpen)
+        {
+            objectToActivate.SetActive(true);
+            DocumentWindow.Current.Closed += StopVoice;
+        }
+    }
+
+    // la voz dura lo que la ficha abierta, asi al volver a abrirla arranca de nuevo
+    private void StopVoice()
+    {
+        DocumentWindow.Current.Closed -= StopVoice;
+        objectToActivate.SetActive(false);
     }
 
     private void UpdateScreen()
